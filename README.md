@@ -1,8 +1,8 @@
 # Portafolio de Business Intelligence - Pablo Morales
 
-Portafolio de proyectos de BI orientados a **decisiones de negocio**, no a
-graficos decorativos. Cada proyecto parte de una pregunta que un gerente haria
-y termina en una recomendacion accionable.
+Portafolio de proyectos de BI enfocados en **resolver problemas de negocio**,
+no en graficos decorativos. Cada proyecto identifica un problema real, lo
+cuantifica y termina en una recomendacion accionable.
 
 **Dominios:** Retail &middot; Finanzas &middot; Salud
 **Stack:** Power BI, SQL, Python, modelado de datos, data storytelling.
