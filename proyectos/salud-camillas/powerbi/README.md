@@ -1,12 +1,12 @@
 # Power BI
 
-Aca va el reporte de Power BI que crearas en **tu PC personal** con
+Acá va el reporte de Power BI que crearás en **tu PC personal** con
 **Power BI Desktop** (gratis, sin cuenta):
 
 1. Instala Power BI Desktop (solo Windows).
-2. Obtener datos -> Texto/CSV -> `../data/ocupacion_camillas.csv`.
+2. Obtener datos → Texto/CSV → `../data/ocupacion_camillas.csv`.
 3. Modela y crea los visuales (sugerencia: replica la historia del dashboard web
-   -> pabellon critico por turno, presion por hospital, efecto invierno).
+   → pabellón crítico por turno, presión por hospital, efecto invierno).
 4. Guarda `camillas.pbix` en esta carpeta.
 5. Exporta 2-3 capturas (PNG) del reporte a esta carpeta para mostrarlas en el
    README / sitio sin que el reclutador tenga que abrir Power BI.
