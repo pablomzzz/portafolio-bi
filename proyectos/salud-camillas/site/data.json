@@ -1,0 +1,160 @@
+{
+  "kpis": {
+    "filas": 6480,
+    "pct_rojo": 13.4,
+    "total_en_espera": 1453,
+    "peor_pabellon": "Urgencias / Noche - Hospital Metropolitano Central"
+  },
+  "top_rojo": [
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "servicio": "Urgencias",
+      "turno": "Noche",
+      "espera": 515,
+      "ocupacion": 1.0,
+      "veces_rojo": 90
+    },
+    {
+      "hospital": "Hospital Regional Norte",
+      "servicio": "Urgencias",
+      "turno": "Noche",
+      "espera": 371,
+      "ocupacion": 1.0,
+      "veces_rojo": 90
+    },
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "servicio": "Urgencias",
+      "turno": "Tarde",
+      "espera": 167,
+      "ocupacion": 0.996,
+      "veces_rojo": 80
+    },
+    {
+      "hospital": "Hospital Costa Poniente",
+      "servicio": "Urgencias",
+      "turno": "Noche",
+      "espera": 139,
+      "ocupacion": 0.993,
+      "veces_rojo": 68
+    },
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "servicio": "Medicina Interna",
+      "turno": "Tarde",
+      "espera": 59,
+      "ocupacion": 0.989,
+      "veces_rojo": 68
+    },
+    {
+      "hospital": "Hospital Regional Norte",
+      "servicio": "Urgencias",
+      "turno": "Tarde",
+      "espera": 58,
+      "ocupacion": 0.989,
+      "veces_rojo": 57
+    },
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "servicio": "Urgencias",
+      "turno": "Manana",
+      "espera": 51,
+      "ocupacion": 0.986,
+      "veces_rojo": 40
+    },
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "servicio": "Pediatria",
+      "turno": "Tarde",
+      "espera": 44,
+      "ocupacion": 0.991,
+      "veces_rojo": 64
+    },
+    {
+      "hospital": "Hospital del Valle",
+      "servicio": "Urgencias",
+      "turno": "Noche",
+      "espera": 24,
+      "ocupacion": 0.991,
+      "veces_rojo": 25
+    },
+    {
+      "hospital": "Hospital Regional Norte",
+      "servicio": "Urgencias",
+      "turno": "Manana",
+      "espera": 1,
+      "ocupacion": 0.985,
+      "veces_rojo": 17
+    }
+  ],
+  "por_turno": [
+    {
+      "turno": "Manana",
+      "ocupacion": 0.729,
+      "espera_min": 17,
+      "en_espera": 52
+    },
+    {
+      "turno": "Tarde",
+      "ocupacion": 0.803,
+      "espera_min": 27,
+      "en_espera": 347
+    },
+    {
+      "turno": "Noche",
+      "ocupacion": 0.765,
+      "espera_min": 31,
+      "en_espera": 1054
+    }
+  ],
+  "por_hospital": [
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "ocupacion": 0.871
+    },
+    {
+      "hospital": "Hospital Regional Norte",
+      "ocupacion": 0.815
+    },
+    {
+      "hospital": "Hospital Costa Poniente",
+      "ocupacion": 0.732
+    },
+    {
+      "hospital": "Hospital del Valle",
+      "ocupacion": 0.645
+    }
+  ],
+  "invierno_vs_resto": [
+    {
+      "servicio": "Cirugia",
+      "invierno": 0.578,
+      "resto": 0.0
+    },
+    {
+      "servicio": "Maternidad",
+      "invierno": 0.7,
+      "resto": 0.0
+    },
+    {
+      "servicio": "Medicina Interna",
+      "invierno": 0.807,
+      "resto": 0.0
+    },
+    {
+      "servicio": "Pediatria",
+      "invierno": 0.812,
+      "resto": 0.0
+    },
+    {
+      "servicio": "UCI",
+      "invierno": 0.803,
+      "resto": 0.0
+    },
+    {
+      "servicio": "Urgencias",
+      "invierno": 0.894,
+      "resto": 0.0
+    }
+  ]
+}

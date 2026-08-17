@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pablo Morales | Portafolio de Business Intelligence</title>
+  <meta name="description" content="Portafolio de BI: proyectos de datos orientados a decisiones de negocio en salud, retail y finanzas." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <a href="#proyectos" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-sky-600">
+    Saltar a proyectos
+  </a>
+
+  <!-- HERO -->
+  <header class="border-b border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <p class="text-sky-400 font-semibold tracking-wide uppercase text-sm">
+        Business Intelligence &amp; Data Analytics
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mt-3">Pablo Morales</h1>
+      <p class="text-lg text-slate-300 mt-4 max-w-2xl">
+        Analista de datos enfocado en convertir datos en <strong>decisiones de
+        negocio</strong>. No hago graficos: respondo preguntas que un gerente
+        haria. Especializado en <strong>retail, finanzas y salud</strong>.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-6" aria-label="Habilidades">
+        <span class="rounded-full bg-slate-800 px-4 py-1.5 text-sm">Power BI</span>
+        <span class="rounded-full bg-slate-800 px-4 py-1.5 text-sm">SQL</span>
+        <span class="rounded-full bg-slate-800 px-4 py-1.5 text-sm">Python</span>
+        <span class="rounded-full bg-slate-800 px-4 py-1.5 text-sm">Modelado de datos</span>
+        <span class="rounded-full bg-slate-800 px-4 py-1.5 text-sm">Data storytelling</span>
+      </div>
+      <div class="flex flex-wrap gap-4 mt-8">
+        <a href="#proyectos" class="rounded-lg bg-sky-500 px-5 py-2.5 font-semibold text-slate-950 hover:bg-sky-400">
+          Ver proyectos
+        </a>
+        <a href="https://github.com/pablomzzz" class="rounded-lg border border-slate-700 px-5 py-2.5 font-semibold hover:bg-slate-800">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="proyectos" class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-2">Proyectos</h2>
+    <p class="text-slate-400 mb-8">Cada proyecto parte de una pregunta de negocio real.</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Proyecto 1: Salud (activo) -->
+      <article class="rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden flex flex-col">
+        <div class="p-6 flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="rounded-full bg-rose-500/20 text-rose-300 px-3 py-1 text-xs font-semibold">Salud</span>
+            <span class="rounded-full bg-emerald-500/20 text-emerald-300 px-3 py-1 text-xs font-semibold">Listo</span>
+          </div>
+          <h3 class="text-xl font-bold">Ocupacion de camillas hospitalarias</h3>
+          <p class="text-slate-400 mt-2">
+            &iquest;Que pabellon se queda sin camillas este turno? Dashboard de
+            gestion de recursos que prioriza donde reforzar capacidad.
+          </p>
+          <p class="text-xs text-slate-500 mt-3">Power BI &middot; SQL &middot; Python &middot; Chart.js</p>
+        </div>
+        <div class="border-t border-slate-800 p-4 flex gap-3">
+          <a href="proyectos/salud-camillas/site/index.html"
+             class="rounded-lg bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-sky-400">
+            Ver dashboard
+          </a>
+          <a href="https://github.com/pablomzzz/portafolio-bi/tree/main/proyectos/salud-camillas"
+             class="rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold hover:bg-slate-800">
+            Codigo
+          </a>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: Retail (proximamente) -->
+      <article class="rounded-2xl border border-dashed border-slate-800 bg-slate-900/30 p-6 flex flex-col justify-center">
+        <span class="rounded-full bg-amber-500/20 text-amber-300 px-3 py-1 text-xs font-semibold w-fit">Retail</span>
+        <h3 class="text-xl font-bold mt-3 text-slate-300">Top 10 oportunidades de venta cruzada</h3>
+        <p class="text-slate-500 mt-2">Market basket analysis y priorizacion comercial. Proximamente.</p>
+      </article>
+
+      <!-- Proyecto 3: Finanzas (proximamente) -->
+      <article class="rounded-2xl border border-dashed border-slate-800 bg-slate-900/30 p-6 flex flex-col justify-center">
+        <span class="rounded-full bg-emerald-500/20 text-emerald-300 px-3 py-1 text-xs font-semibold w-fit">Finanzas</span>
+        <h3 class="text-xl font-bold mt-3 text-slate-300">Salud financiera de empresas</h3>
+        <p class="text-slate-500 mt-2">Ratios, tendencias y anomalias con datos publicos. Proximamente.</p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-6 py-8 text-sm text-slate-500">
+      <p>Portafolio de BI de Pablo Morales. Los proyectos usan datos publicos o
+      sinteticos; ninguno contiene informacion confidencial ni de terceros.</p>
+    </div>
+  </footer>
+</body>
+</html>

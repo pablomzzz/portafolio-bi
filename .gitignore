@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Power BI temporales
+*.tmp
+~$*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# NUNCA versionar datos con PII real.
+# Los proyectos usan solo datos publicos o sinteticos; revisar antes de commitear
+# cualquier dato nuevo.

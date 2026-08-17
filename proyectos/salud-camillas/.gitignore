@@ -1,0 +1,21 @@
+# Datos generados (se regeneran con analysis/generar_datos.py)
+# Descomenta la siguiente linea si NO quieres versionar el CSV sintetico:
+# data/ocupacion_camillas.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Power BI temporales
+*.tmp
+~$*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# NUNCA versionar datos con PII real
+# (este proyecto usa SOLO datos sinteticos; si algun dia entran datos reales,
+#  revisar que no contengan info de pacientes antes de commitear)
