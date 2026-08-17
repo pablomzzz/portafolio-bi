@@ -12,8 +12,8 @@ cuantifica y termina en una recomendacion accionable.
 | Proyecto | Dominio | Pregunta de negocio | Estado |
 |---|---|---|---|
 | [Ocupacion de camillas](proyectos/salud-camillas/) | Salud | Que pabellon se queda sin camillas este turno? | Listo |
-| Top 10 oportunidades de venta cruzada | Retail | Donde esta la mayor oportunidad comercial? | Proximamente |
-| Salud financiera de empresas | Finanzas | Que empresas muestran senales de riesgo? | Proximamente |
+| [Oportunidades de venta cruzada](proyectos/retail-oportunidades/) | Retail | Donde esta la mayor oportunidad comercial? | Listo |
+| [Salud financiera de empresas](proyectos/finanzas-riesgo/) | Finanzas | Que empresas muestran senales de riesgo? | Listo |
 
 ## Como se publica (GitHub Pages)
 

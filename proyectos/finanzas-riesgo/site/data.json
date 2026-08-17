@@ -1,0 +1,273 @@
+{
+  "kpis": {
+    "empresas": 20,
+    "en_riesgo": 2,
+    "pct_riesgo": 10.0,
+    "mas_riesgosa": "Empresa M",
+    "score_max": 65
+  },
+  "ranking_riesgo": [
+    {
+      "empresa": "Empresa M",
+      "sector": "Tecnologia",
+      "anio": 2025,
+      "margen_neto": -0.017,
+      "liquidez": 0.84,
+      "endeudamiento": 0.865,
+      "roe": -0.093,
+      "crecimiento": -0.021,
+      "score_riesgo": 65,
+      "nivel": "Alto"
+    },
+    {
+      "empresa": "Empresa J",
+      "sector": "Manufactura",
+      "anio": 2025,
+      "margen_neto": -0.025,
+      "liquidez": 1.03,
+      "endeudamiento": 0.828,
+      "roe": -0.126,
+      "crecimiento": -0.02,
+      "score_riesgo": 63,
+      "nivel": "Medio"
+    },
+    {
+      "empresa": "Empresa H",
+      "sector": "Tecnologia",
+      "anio": 2025,
+      "margen_neto": 0.064,
+      "liquidez": 1.22,
+      "endeudamiento": 0.62,
+      "roe": 0.132,
+      "crecimiento": 0.02,
+      "score_riesgo": 24,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa L",
+      "sector": "Servicios",
+      "anio": 2025,
+      "margen_neto": 0.084,
+      "liquidez": 1.17,
+      "endeudamiento": 0.62,
+      "roe": 0.235,
+      "crecimiento": 0.059,
+      "score_riesgo": 19,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa N",
+      "sector": "Servicios",
+      "anio": 2025,
+      "margen_neto": 0.08,
+      "liquidez": 1.18,
+      "endeudamiento": 0.623,
+      "roe": 0.172,
+      "crecimiento": 0.052,
+      "score_riesgo": 19,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa D",
+      "sector": "Manufactura",
+      "anio": 2025,
+      "margen_neto": 0.092,
+      "liquidez": 1.24,
+      "endeudamiento": 0.591,
+      "roe": 0.178,
+      "crecimiento": 0.025,
+      "score_riesgo": 18,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa K",
+      "sector": "Retail",
+      "anio": 2025,
+      "margen_neto": 0.061,
+      "liquidez": 1.17,
+      "endeudamiento": 0.489,
+      "roe": 0.086,
+      "crecimiento": 0.022,
+      "score_riesgo": 16,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa O",
+      "sector": "Manufactura",
+      "anio": 2025,
+      "margen_neto": 0.06,
+      "liquidez": 1.3,
+      "endeudamiento": 0.54,
+      "roe": 0.108,
+      "crecimiento": 0.044,
+      "score_riesgo": 15,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa P",
+      "sector": "Tecnologia",
+      "anio": 2025,
+      "margen_neto": 0.081,
+      "liquidez": 1.45,
+      "endeudamiento": 0.615,
+      "roe": 0.159,
+      "crecimiento": 0.026,
+      "score_riesgo": 15,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa S",
+      "sector": "Servicios",
+      "anio": 2025,
+      "margen_neto": 0.052,
+      "liquidez": 1.28,
+      "endeudamiento": 0.51,
+      "roe": 0.107,
+      "crecimiento": 0.055,
+      "score_riesgo": 15,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa C",
+      "sector": "Retail",
+      "anio": 2025,
+      "margen_neto": 0.093,
+      "liquidez": 1.2,
+      "endeudamiento": 0.543,
+      "roe": 0.213,
+      "crecimiento": 0.036,
+      "score_riesgo": 14,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa F",
+      "sector": "Retail",
+      "anio": 2025,
+      "margen_neto": 0.046,
+      "liquidez": 1.33,
+      "endeudamiento": 0.471,
+      "roe": 0.076,
+      "crecimiento": 0.03,
+      "score_riesgo": 13,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa E",
+      "sector": "Tecnologia",
+      "anio": 2025,
+      "margen_neto": 0.089,
+      "liquidez": 1.45,
+      "endeudamiento": 0.518,
+      "roe": 0.22,
+      "crecimiento": 0.055,
+      "score_riesgo": 8,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa I",
+      "sector": "Construccion",
+      "anio": 2025,
+      "margen_neto": 0.074,
+      "liquidez": 1.36,
+      "endeudamiento": 0.474,
+      "roe": 0.167,
+      "crecimiento": 0.043,
+      "score_riesgo": 8,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa A",
+      "sector": "Retail",
+      "anio": 2025,
+      "margen_neto": 0.122,
+      "liquidez": 1.81,
+      "endeudamiento": 0.314,
+      "roe": 0.129,
+      "crecimiento": 0.12,
+      "score_riesgo": 0,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa B",
+      "sector": "Retail",
+      "anio": 2025,
+      "margen_neto": 0.177,
+      "liquidez": 2.0,
+      "endeudamiento": 0.315,
+      "roe": 0.255,
+      "crecimiento": 0.095,
+      "score_riesgo": 0,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa G",
+      "sector": "Retail",
+      "anio": 2025,
+      "margen_neto": 0.095,
+      "liquidez": 2.11,
+      "endeudamiento": 0.34,
+      "roe": 0.143,
+      "crecimiento": 0.148,
+      "score_riesgo": 0,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa Q",
+      "sector": "Tecnologia",
+      "anio": 2025,
+      "margen_neto": 0.113,
+      "liquidez": 2.05,
+      "endeudamiento": 0.323,
+      "roe": 0.141,
+      "crecimiento": 0.097,
+      "score_riesgo": 0,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa R",
+      "sector": "Tecnologia",
+      "anio": 2025,
+      "margen_neto": 0.127,
+      "liquidez": 2.04,
+      "endeudamiento": 0.298,
+      "roe": 0.178,
+      "crecimiento": 0.127,
+      "score_riesgo": 0,
+      "nivel": "Bajo"
+    },
+    {
+      "empresa": "Empresa T",
+      "sector": "Servicios",
+      "anio": 2025,
+      "margen_neto": 0.113,
+      "liquidez": 2.16,
+      "endeudamiento": 0.336,
+      "roe": 0.146,
+      "crecimiento": 0.097,
+      "score_riesgo": 0,
+      "nivel": "Bajo"
+    }
+  ],
+  "por_sector": [
+    {
+      "sector": "Manufactura",
+      "riesgo_prom": 32
+    },
+    {
+      "sector": "Tecnologia",
+      "riesgo_prom": 19
+    },
+    {
+      "sector": "Servicios",
+      "riesgo_prom": 13
+    },
+    {
+      "sector": "Construccion",
+      "riesgo_prom": 8
+    },
+    {
+      "sector": "Retail",
+      "riesgo_prom": 7
+    }
+  ]
+}

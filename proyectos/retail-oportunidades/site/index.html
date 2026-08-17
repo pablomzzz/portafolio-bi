@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oportunidades de Venta Cruzada | Dashboard BI</title>
+  <meta name="description" content="Market basket analysis: que productos se venden juntos y donde esta la mayor oportunidad comercial." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .chart-box { position: relative; height: 340px; width: 100%; }
+    :focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-sky-600">Saltar al contenido</a>
+
+  <header class="border-b border-slate-800 bg-slate-900/60">
+    <div class="max-w-6xl mx-auto px-6 py-8">
+      <p class="text-emerald-400 font-semibold tracking-wide uppercase text-sm">
+        Proyecto BI - Analitica comercial
+      </p>
+      <h1 class="text-3xl md:text-4xl font-bold mt-2">
+        &iquest;Donde esta la mayor oportunidad de venta cruzada?
+      </h1>
+      <p class="text-slate-400 mt-3 max-w-3xl">
+        Market basket analysis: detecta que productos se compran juntos para
+        priorizar promociones, bundles y ubicacion en gondola. Autor:
+        <a href="https://github.com/pablomzzz" class="text-emerald-400 underline">pablomzzz</a>.
+      </p>
+    </div>
+  </header>
+
+  <main id="contenido" class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+
+    <section aria-labelledby="resumen-top">
+      <h2 id="resumen-top" class="text-xl font-semibold mb-4">Resumen ejecutivo</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="kpis" role="list"></div>
+      <div class="mt-4 rounded-lg border border-emerald-500/40 bg-emerald-500/10 p-4 text-emerald-200">
+        <strong>Hallazgo clave:</strong> <span id="insight-top">Cargando...</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="g1">
+      <h2 id="g1" class="text-lg font-semibold mb-3">
+        Top 10 oportunidades de venta cruzada (por lift)
+      </h2>
+      <p class="text-sm text-slate-500 mb-3">
+        Lift = cuantas veces mas se compran juntos vs por azar. Mayor lift = mayor afinidad.
+      </p>
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+        <div class="chart-box"><canvas id="chartLift" aria-label="Top oportunidades por lift"></canvas></div>
+      </div>
+    </section>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <section aria-labelledby="g2">
+        <h2 id="g2" class="text-lg font-semibold mb-3">Top productos por venta</h2>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+          <div class="chart-box"><canvas id="chartProductos" aria-label="Top productos"></canvas></div>
+        </div>
+      </section>
+      <section aria-labelledby="g3">
+        <h2 id="g3" class="text-lg font-semibold mb-3">Ventas por categoria</h2>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+          <div class="chart-box"><canvas id="chartCategoria" aria-label="Ventas por categoria"></canvas></div>
+        </div>
+      </section>
+    </div>
+
+    <section aria-labelledby="g4">
+      <h2 id="g4" class="text-lg font-semibold mb-3">Ticket promedio por tienda</h2>
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+        <div class="chart-box"><canvas id="chartTienda" aria-label="Ventas por tienda"></canvas></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="resumen-bot" class="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
+      <h2 id="resumen-bot" class="text-xl font-semibold mb-4">Recomendaciones</h2>
+      <ul class="space-y-3 text-slate-300 list-disc list-inside" id="recomendaciones"></ul>
+    </section>
+
+    <footer class="border-t border-slate-800 pt-6 text-sm text-slate-500">
+      <p><strong>Datos sinteticos:</strong> generados con
+      <code>analysis/generar_datos.py</code>. No representan a ninguna empresa real.</p>
+    </footer>
+  </main>
+
+  <script>
+    const CLP = (n) => "$" + new Intl.NumberFormat("es-CL").format(n);
+    const MM = (n) => "$" + (n / 1e6).toFixed(1) + "M";
+    Chart.defaults.color = "#cbd5e1";
+    Chart.defaults.borderColor = "#1e293b";
+
+    async function main() {
+      const d = await fetch("data.json").then((r) => r.json());
+      renderKPIs(d.kpis);
+      document.getElementById("insight-top").textContent =
+        `La combinacion con mayor afinidad es ${d.kpis.mejor_oportunidad} ` +
+        `(lift ${d.kpis.mejor_lift}): se compran juntos ${d.kpis.mejor_lift} veces mas ` +
+        `que por azar. Oportunidad clara de bundle o promo cruzada.`;
+      renderLift(d.top_oportunidades);
+      renderProductos(d.top_productos);
+      renderCategoria(d.por_categoria);
+      renderTienda(d.por_tienda);
+      renderRecomendaciones(d);
+    }
+
+    function card(label, value, tone = "emerald") {
+      return `<div role="listitem" class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+        <div class="text-2xl font-bold text-${tone}-400">${value}</div>
+        <div class="text-sm text-slate-400 mt-1">${label}</div></div>`;
+    }
+    function cardOportunidad(op, lift) {
+      return `<a href="#resumen-bot" role="listitem"
+          class="group block rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-4 transition hover:bg-emerald-500/20"
+          aria-label="Mejor oportunidad: ${op}. Ir a recomendaciones.">
+        <div class="text-sm text-slate-400">Mejor oportunidad</div>
+        <div class="text-base font-bold text-emerald-300 mt-1 leading-tight">${op}</div>
+        <div class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-emerald-200 group-hover:underline">
+          lift ${lift} &middot; ver plan &darr;</div></a>`;
+    }
+    function renderKPIs(k) {
+      document.getElementById("kpis").innerHTML =
+        card("Ventas totales (90 dias)", MM(k.ventas_total)) +
+        card("Boletas", new Intl.NumberFormat("es-CL").format(k.boletas), "sky") +
+        card("Ticket promedio", CLP(k.ticket_promedio), "sky") +
+        cardOportunidad(k.mejor_oportunidad, k.mejor_lift);
+    }
+
+    function renderLift(rows) {
+      new Chart(document.getElementById("chartLift"), {
+        type: "bar",
+        data: {
+          labels: rows.map((r) => `${r.producto_a} + ${r.producto_b}`),
+          datasets: [{ label: "Lift", data: rows.map((r) => r.lift), backgroundColor: "#10b981" }],
+        },
+        options: {
+          indexAxis: "y", responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: { x: { beginAtZero: true, title: { display: true, text: "lift (>1 = afinidad)" } } },
+        },
+      });
+    }
+    function renderProductos(rows) {
+      new Chart(document.getElementById("chartProductos"), {
+        type: "bar",
+        data: {
+          labels: rows.map((r) => r.producto),
+          datasets: [{ label: "Ventas", data: rows.map((r) => r.monto), backgroundColor: "#38bdf8" }],
+        },
+        options: {
+          indexAxis: "y", responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => MM(c.raw) } } },
+          scales: { x: { beginAtZero: true, ticks: { callback: MM } } },
+        },
+      });
+    }
+    function renderCategoria(rows) {
+      new Chart(document.getElementById("chartCategoria"), {
+        type: "doughnut",
+        data: {
+          labels: rows.map((r) => r.categoria),
+          datasets: [{
+            data: rows.map((r) => r.monto),
+            backgroundColor: ["#10b981","#38bdf8","#818cf8","#f59e0b","#f43f5e","#22d3ee","#a78bfa","#fb7185"],
+          }],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: "right" }, tooltip: { callbacks: { label: (c) => c.label + ": " + MM(c.raw) } } },
+        },
+      });
+    }
+    function renderTienda(rows) {
+      new Chart(document.getElementById("chartTienda"), {
+        type: "bar",
+        data: {
+          labels: rows.map((r) => r.tienda),
+          datasets: [{ label: "Ventas", data: rows.map((r) => r.monto), backgroundColor: "#818cf8" }],
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => MM(c.raw) } } },
+          scales: { y: { beginAtZero: true, ticks: { callback: MM } } },
+        },
+      });
+    }
+    function renderRecomendaciones(d) {
+      const t = d.top_oportunidades;
+      const items = [
+        `Crear bundle o promo cruzada para <strong>${d.kpis.mejor_oportunidad}</strong> (lift ${d.kpis.mejor_lift}): es la afinidad mas fuerte del surtido.`,
+        t[1] ? `Ubicar juntos en gondola <strong>${t[1].producto_a} + ${t[1].producto_b}</strong> (lift ${t[1].lift}).` : "",
+        "Usar las reglas de afinidad para recomendaciones en punto de venta y e-commerce (\"clientes que compraron X tambien llevaron Y\").",
+        "Revisar el mix por categoria: concentrar promociones donde el ticket y la rotacion lo justifiquen.",
+      ].filter(Boolean);
+      document.getElementById("recomendaciones").innerHTML = items.map((i) => `<li>${i}</li>`).join("");
+    }
+
+    main().catch((e) => {
+      document.getElementById("insight-top").textContent =
+        "No se pudo cargar data.json. Sirve el sitio con un servidor local.";
+      console.error(e);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+{
+  "kpis": {
+    "ventas_total": 47911600,
+    "boletas": 5000,
+    "ticket_promedio": 9582,
+    "mejor_oportunidad": "Panales + Toallitas humedas",
+    "mejor_lift": 4.64
+  },
+  "top_oportunidades": [
+    {
+      "producto_a": "Panales",
+      "producto_b": "Toallitas humedas",
+      "soporte": 0.0768,
+      "confianza_a_b": 0.756,
+      "lift": 4.64,
+      "boletas": 384
+    },
+    {
+      "producto_a": "Azucar",
+      "producto_b": "Cafe",
+      "soporte": 0.0668,
+      "confianza_a_b": 0.333,
+      "lift": 3.54,
+      "boletas": 334
+    },
+    {
+      "producto_a": "Cloro",
+      "producto_b": "Detergente",
+      "soporte": 0.053,
+      "confianza_a_b": 0.361,
+      "lift": 3.36,
+      "boletas": 265
+    },
+    {
+      "producto_a": "Cerveza",
+      "producto_b": "Papas fritas",
+      "soporte": 0.0644,
+      "confianza_a_b": 0.53,
+      "lift": 2.96,
+      "boletas": 322
+    },
+    {
+      "producto_a": "Mantequilla",
+      "producto_b": "Pan molde",
+      "soporte": 0.0596,
+      "confianza_a_b": 0.304,
+      "lift": 2.96,
+      "boletas": 298
+    },
+    {
+      "producto_a": "Azucar",
+      "producto_b": "Te",
+      "soporte": 0.0544,
+      "confianza_a_b": 0.271,
+      "lift": 2.94,
+      "boletas": 272
+    },
+    {
+      "producto_a": "Cafe",
+      "producto_b": "Galletas",
+      "soporte": 0.0344,
+      "confianza_a_b": 0.366,
+      "lift": 2.9,
+      "boletas": 172
+    },
+    {
+      "producto_a": "Detergente",
+      "producto_b": "Esponjas",
+      "soporte": 0.041,
+      "confianza_a_b": 0.382,
+      "lift": 2.86,
+      "boletas": 205
+    },
+    {
+      "producto_a": "Mantequilla",
+      "producto_b": "Pan hallulla",
+      "soporte": 0.0566,
+      "confianza_a_b": 0.289,
+      "lift": 2.78,
+      "boletas": 283
+    },
+    {
+      "producto_a": "Cerveza",
+      "producto_b": "Mani",
+      "soporte": 0.0486,
+      "confianza_a_b": 0.4,
+      "lift": 2.76,
+      "boletas": 243
+    }
+  ],
+  "top_productos": [
+    {
+      "producto": "Queso",
+      "monto": 6138000
+    },
+    {
+      "producto": "Panales",
+      "monto": 5568000
+    },
+    {
+      "producto": "Detergente",
+      "monto": 4064500
+    },
+    {
+      "producto": "Vino tinto",
+      "monto": 3450000
+    },
+    {
+      "producto": "Mantequilla",
+      "monto": 3357500
+    },
+    {
+      "producto": "Cerveza",
+      "monto": 3062500
+    },
+    {
+      "producto": "Cafe",
+      "monto": 2592000
+    },
+    {
+      "producto": "Toallitas humedas",
+      "monto": 2464000
+    },
+    {
+      "producto": "Papas fritas",
+      "monto": 2176200
+    },
+    {
+      "producto": "Azucar",
+      "monto": 1800500
+    }
+  ],
+  "por_categoria": [
+    {
+      "categoria": "Lacteos",
+      "monto": 10800700
+    },
+    {
+      "categoria": "Bebe",
+      "monto": 8032000
+    },
+    {
+      "categoria": "Limpieza",
+      "monto": 6595700
+    },
+    {
+      "categoria": "Alcohol",
+      "monto": 6512500
+    },
+    {
+      "categoria": "Cafe/Te",
+      "monto": 5992500
+    },
+    {
+      "categoria": "Snacks",
+      "monto": 4225400
+    },
+    {
+      "categoria": "Panaderia",
+      "monto": 2992800
+    },
+    {
+      "categoria": "Bebidas",
+      "monto": 2760000
+    }
+  ],
+  "por_tienda": [
+    {
+      "tienda": "Tienda Norte",
+      "monto": 12357000
+    },
+    {
+      "tienda": "Tienda Centro",
+      "monto": 12179300
+    },
+    {
+      "tienda": "Tienda Mall",
+      "monto": 12114000
+    },
+    {
+      "tienda": "Tienda Sur",
+      "monto": 11261300
+    }
+  ]
+}
