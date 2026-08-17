@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ocupacion de Camillas Hospitalarias | Dashboard BI</title>
-  <meta name="description" content="Dashboard de gestion de recursos hospitalarios: que pabellon se queda sin camillas este turno." />
+  <title>Ocupación de Camillas Hospitalarias | Dashboard BI</title>
+  <meta name="description" content="Dashboard de gestión de recursos hospitalarios: qué pabellón se queda sin camillas este turno." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
@@ -15,7 +15,6 @@
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased">
 
-  <!-- Skip link (accesibilidad) -->
   <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-sky-600">
     Saltar al contenido
   </a>
@@ -23,14 +22,14 @@
   <header class="border-b border-slate-800 bg-slate-900/60">
     <div class="max-w-6xl mx-auto px-6 py-8">
       <p class="text-sky-400 font-semibold tracking-wide uppercase text-sm">
-        Proyecto BI - Gestion de recursos hospitalarios
+        Proyecto BI · Gestión de recursos hospitalarios
       </p>
       <h1 class="text-3xl md:text-4xl font-bold mt-2">
-        &iquest;Que pabellon se queda sin camillas este turno?
+        ¿Qué pabellón se va a quedar sin camillas este turno?
       </h1>
       <p class="text-slate-400 mt-3 max-w-3xl">
-        De datos de ocupacion a una decision accionable: donde falta capacidad
-        ahora y donde va a faltar. Autor:
+        De datos de ocupación a una decisión accionable: dónde falta capacidad
+        ahora y dónde va a faltar. Autor:
         <a href="https://github.com/pablomzzz" class="text-sky-400 underline">pablomzzz</a>.
       </p>
     </div>
@@ -38,65 +37,57 @@
 
   <main id="contenido" class="max-w-6xl mx-auto px-6 py-10 space-y-12">
 
-    <!-- RESUMEN EJECUTIVO (arriba) -->
     <section aria-labelledby="resumen-top">
       <h2 id="resumen-top" class="text-xl font-semibold mb-4">Resumen ejecutivo</h2>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="kpis" role="list">
-        <!-- KPI cards inyectadas por JS -->
-      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="kpis" role="list"></div>
       <div class="mt-4 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-amber-200">
-        <strong>Hallazgo clave:</strong>
-        <span id="insight-top">Cargando...</span>
+        <strong>Hallazgo clave:</strong> <span id="insight-top">Cargando...</span>
       </div>
     </section>
 
-    <!-- GRAFICOS -->
     <section aria-labelledby="g1">
       <h2 id="g1" class="text-lg font-semibold mb-3">
-        Top 10 pabellones criticos (por pacientes en espera acumulados)
+        Top 10 pabellones críticos (por pacientes en espera acumulados)
       </h2>
       <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-        <div class="chart-box"><canvas id="chartTopRojo" aria-label="Grafico de barras: top pabellones criticos"></canvas></div>
+        <div class="chart-box"><canvas id="chartTopRojo" aria-label="Gráfico de barras: top pabellones críticos"></canvas></div>
       </div>
     </section>
 
     <div class="grid md:grid-cols-2 gap-6">
       <section aria-labelledby="g2">
-        <h2 id="g2" class="text-lg font-semibold mb-3">Presion por turno</h2>
+        <h2 id="g2" class="text-lg font-semibold mb-3">Presión por turno</h2>
         <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-          <div class="chart-box"><canvas id="chartTurno" aria-label="Grafico: ocupacion por turno"></canvas></div>
+          <div class="chart-box"><canvas id="chartTurno" aria-label="Gráfico: ocupación por turno"></canvas></div>
         </div>
       </section>
       <section aria-labelledby="g3">
-        <h2 id="g3" class="text-lg font-semibold mb-3">Ocupacion promedio por hospital</h2>
+        <h2 id="g3" class="text-lg font-semibold mb-3">Ocupación promedio por hospital</h2>
         <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-          <div class="chart-box"><canvas id="chartHospital" aria-label="Grafico: ocupacion por hospital"></canvas></div>
+          <div class="chart-box"><canvas id="chartHospital" aria-label="Gráfico: ocupación por hospital"></canvas></div>
         </div>
       </section>
     </div>
 
     <section aria-labelledby="g4">
       <h2 id="g4" class="text-lg font-semibold mb-3">
-        Efecto campana de invierno (mayo-agosto) por servicio
+        Efecto campaña de invierno (mayo-agosto) por servicio
       </h2>
       <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-        <div class="chart-box"><canvas id="chartInvierno" aria-label="Grafico: invierno vs resto del ano"></canvas></div>
+        <div class="chart-box"><canvas id="chartInvierno" aria-label="Gráfico: invierno vs resto del año"></canvas></div>
       </div>
     </section>
 
-    <!-- INSIGHTS EJECUTIVOS (abajo) -->
     <section aria-labelledby="resumen-bot" class="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
       <h2 id="resumen-bot" class="text-xl font-semibold mb-4">Recomendaciones</h2>
-      <ul class="space-y-3 text-slate-300 list-disc list-inside" id="recomendaciones">
-        <!-- inyectadas por JS -->
-      </ul>
+      <ul class="space-y-3 text-slate-300 list-disc list-inside" id="recomendaciones"></ul>
     </section>
 
     <footer class="border-t border-slate-800 pt-6 text-sm text-slate-500">
       <p>
-        <strong>Datos sinteticos:</strong> generados con
+        <strong>Datos sintéticos:</strong> generados con
         <code>analysis/generar_datos.py</code>. No representan a ninguna
-        institucion ni paciente real. Proyecto de portafolio de BI.
+        institución ni paciente real. Proyecto de portafolio de BI.
       </p>
     </footer>
   </main>
@@ -127,18 +118,18 @@
     function cardCritico(peor) {
       return `<a href="#resumen-bot" role="listitem"
           class="group block rounded-xl border border-rose-500/40 bg-rose-500/10 p-4 transition hover:bg-rose-500/20"
-          aria-label="Pabellon mas critico: ${peor}. Ir al plan de accion.">
-        <div class="text-sm text-slate-400">Pabellon mas critico</div>
+          aria-label="Pabellón más crítico: ${peor}. Ir al plan de acción.">
+        <div class="text-sm text-slate-400">Pabellón más crítico</div>
         <div class="text-base font-bold text-rose-300 mt-1 leading-tight">${peor}</div>
         <div class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-rose-200 group-hover:underline">
-          Ver plan de accion &darr;
+          Ver plan de acción ↓
         </div></a>`;
     }
 
     function renderKPIs(k) {
       document.getElementById("kpis").innerHTML =
         card("Mediciones analizadas", FMT(k.filas)) +
-        card("Turnos en ocupacion critica", k.pct_rojo + "%", "amber") +
+        card("Turnos en ocupación crítica", k.pct_rojo + "%", "amber") +
         card("Pacientes en espera (total)", FMT(k.total_en_espera), "rose") +
         cardCritico(k.peor_pabellon);
     }
@@ -149,7 +140,7 @@
       const totAll = d.kpis.total_en_espera;
       const pct = totAll ? Math.round((totNoche * 100) / totAll) : 0;
       document.getElementById("insight-top").textContent =
-        `El pabellon mas critico es ${d.kpis.peor_pabellon}. ` +
+        `El pabellón más crítico es ${d.kpis.peor_pabellon}. ` +
         `El turno Noche concentra el ${pct}% de toda la espera de la red.`;
     }
 
@@ -178,7 +169,7 @@
         data: {
           labels: rows.map((r) => r.turno),
           datasets: [{
-            label: "Ocupacion promedio",
+            label: "Ocupación promedio",
             data: rows.map((r) => r.ocupacion),
             backgroundColor: ["#38bdf8", "#818cf8", "#f43f5e"],
           }],
@@ -197,7 +188,7 @@
         data: {
           labels: rows.map((r) => r.hospital),
           datasets: [{
-            label: "Ocupacion promedio",
+            label: "Ocupación promedio",
             data: rows.map((r) => r.ocupacion),
             backgroundColor: "#22d3ee",
           }],
@@ -217,7 +208,7 @@
           labels: rows.map((r) => r.servicio),
           datasets: [
             { label: "Invierno", data: rows.map((r) => r.invierno), backgroundColor: "#f43f5e" },
-            { label: "Resto del ano", data: rows.map((r) => r.resto), backgroundColor: "#38bdf8" },
+            { label: "Resto del año", data: rows.map((r) => r.resto), backgroundColor: "#38bdf8" },
           ],
         },
         options: {
@@ -230,10 +221,10 @@
     function renderRecomendaciones(d) {
       const peor = d.kpis.peor_pabellon;
       const items = [
-        `Reforzar camillas y personal en <strong>${peor}</strong>: es el punto de mayor deficit sostenido.`,
+        `Reforzar camillas y personal en <strong>${peor}</strong>: es el punto de mayor déficit sostenido.`,
         "Priorizar el turno <strong>Noche</strong> en urgencias: concentra la mayor espera de la red.",
-        "Anticipar la campana de invierno: los servicios respiratorios y urgencias suben su ocupacion mayo-agosto.",
-        "Evaluar derivacion entre hospitales: los de menor ocupacion pueden absorber demanda de los saturados.",
+        "Anticipar la campaña de invierno: los servicios respiratorios y urgencias suben su ocupación mayo-agosto.",
+        "Evaluar derivación entre hospitales: los de menor ocupación pueden absorber demanda de los saturados.",
       ];
       document.getElementById("recomendaciones").innerHTML =
         items.map((i) => `<li>${i}</li>`).join("");

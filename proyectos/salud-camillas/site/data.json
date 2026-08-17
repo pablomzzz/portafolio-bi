@@ -57,14 +57,14 @@
     {
       "hospital": "Hospital Metropolitano Central",
       "servicio": "Urgencias",
-      "turno": "Manana",
+      "turno": "Mañana",
       "espera": 51,
       "ocupacion": 0.986,
       "veces_rojo": 40
     },
     {
       "hospital": "Hospital Metropolitano Central",
-      "servicio": "Pediatria",
+      "servicio": "Pediatría",
       "turno": "Tarde",
       "espera": 44,
       "ocupacion": 0.991,
@@ -81,7 +81,7 @@
     {
       "hospital": "Hospital Regional Norte",
       "servicio": "Urgencias",
-      "turno": "Manana",
+      "turno": "Mañana",
       "espera": 1,
       "ocupacion": 0.985,
       "veces_rojo": 17
@@ -89,20 +89,20 @@
   ],
   "por_turno": [
     {
-      "turno": "Manana",
-      "ocupacion": 0.729,
+      "turno": "Mañana",
+      "ocupacion": 0.743,
       "espera_min": 17,
       "en_espera": 52
     },
     {
       "turno": "Tarde",
-      "ocupacion": 0.803,
+      "ocupacion": 0.817,
       "espera_min": 27,
       "en_espera": 347
     },
     {
       "turno": "Noche",
-      "ocupacion": 0.765,
+      "ocupacion": 0.776,
       "espera_min": 31,
       "en_espera": 1054
     }
@@ -110,25 +110,25 @@
   "por_hospital": [
     {
       "hospital": "Hospital Metropolitano Central",
-      "ocupacion": 0.871
+      "ocupacion": 0.885
     },
     {
       "hospital": "Hospital Regional Norte",
-      "ocupacion": 0.815
+      "ocupacion": 0.828
     },
     {
       "hospital": "Hospital Costa Poniente",
-      "ocupacion": 0.732
+      "ocupacion": 0.744
     },
     {
       "hospital": "Hospital del Valle",
-      "ocupacion": 0.645
+      "ocupacion": 0.656
     }
   ],
   "invierno_vs_resto": [
     {
-      "servicio": "Cirugia",
-      "invierno": 0.578,
+      "servicio": "Cirugía",
+      "invierno": 0.655,
       "resto": 0.0
     },
     {
@@ -142,7 +142,7 @@
       "resto": 0.0
     },
     {
-      "servicio": "Pediatria",
+      "servicio": "Pediatría",
       "invierno": 0.812,
       "resto": 0.0
     },

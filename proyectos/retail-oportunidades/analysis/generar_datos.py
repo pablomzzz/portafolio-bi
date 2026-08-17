@@ -21,13 +21,13 @@ from pathlib import Path
 # --- Catalogo de productos (categoria -> productos) -------------------------
 
 CATALOGO = {
-    "Panaderia": ["Pan molde", "Pan hallulla", "Croissant"],
-    "Lacteos": ["Leche", "Mantequilla", "Yogurt", "Queso"],
+    "Panadería": ["Pan molde", "Pan hallulla", "Croissant"],
+    "Lácteos": ["Leche", "Mantequilla", "Yogurt", "Queso"],
     "Bebidas": ["Bebida cola", "Agua mineral", "Jugo naranja"],
     "Alcohol": ["Cerveza", "Vino tinto"],
-    "Snacks": ["Papas fritas", "Mani", "Galletas"],
-    "Cafe/Te": ["Cafe", "Te", "Azucar"],
-    "Bebe": ["Panales", "Toallitas humedas"],
+    "Snacks": ["Papas fritas", "Maní", "Galletas"],
+    "Café/Té": ["Café", "Té", "Azúcar"],
+    "Bebé": ["Pañales", "Toallitas húmedas"],
     "Limpieza": ["Detergente", "Cloro", "Esponjas"],
 }
 PRODUCTOS = [p for prods in CATALOGO.values() for p in prods]
@@ -37,11 +37,11 @@ PRODUCTOS = [p for prods in CATALOGO.values() for p in prods]
 AFINIDADES = {
     "Pan molde": [("Mantequilla", 0.55), ("Queso", 0.35)],
     "Pan hallulla": [("Mantequilla", 0.50), ("Queso", 0.30)],
-    "Cerveza": [("Papas fritas", 0.60), ("Mani", 0.45)],
+    "Cerveza": [("Papas fritas", 0.60), ("Maní", 0.45)],
     "Vino tinto": [("Queso", 0.50)],
-    "Cafe": [("Azucar", 0.65), ("Galletas", 0.30)],
-    "Te": [("Azucar", 0.55)],
-    "Panales": [("Toallitas humedas", 0.70), ("Cerveza", 0.25)],
+    "Café": [("Azúcar", 0.65), ("Galletas", 0.30)],
+    "Té": [("Azúcar", 0.55)],
+    "Pañales": [("Toallitas húmedas", 0.70), ("Cerveza", 0.25)],
     "Detergente": [("Cloro", 0.40), ("Esponjas", 0.35)],
     "Bebida cola": [("Papas fritas", 0.35)],
 }
@@ -51,9 +51,9 @@ PRECIOS = {  # precio unitario aproximado en CLP
     "Leche": 1200, "Mantequilla": 2500, "Yogurt": 800, "Queso": 4500,
     "Bebida cola": 1500, "Agua mineral": 900, "Jugo naranja": 1600,
     "Cerveza": 3500, "Vino tinto": 5000,
-    "Papas fritas": 1800, "Mani": 1200, "Galletas": 1000,
-    "Cafe": 4000, "Te": 2500, "Azucar": 1300,
-    "Panales": 8000, "Toallitas humedas": 2200,
+    "Papas fritas": 1800, "Maní": 1200, "Galletas": 1000,
+    "Café": 4000, "Té": 2500, "Azúcar": 1300,
+    "Pañales": 8000, "Toallitas húmedas": 2200,
     "Detergente": 5500, "Cloro": 1400, "Esponjas": 1200,
 }
 

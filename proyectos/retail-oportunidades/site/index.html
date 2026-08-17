@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oportunidades de Venta Cruzada | Dashboard BI</title>
-  <meta name="description" content="Market basket analysis: que productos se venden juntos y donde esta la mayor oportunidad comercial." />
+  <meta name="description" content="Market basket analysis: qué productos se venden juntos y dónde está la mayor oportunidad comercial." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
@@ -20,14 +20,14 @@
   <header class="border-b border-slate-800 bg-slate-900/60">
     <div class="max-w-6xl mx-auto px-6 py-8">
       <p class="text-emerald-400 font-semibold tracking-wide uppercase text-sm">
-        Proyecto BI - Analitica comercial
+        Proyecto BI · Analítica comercial
       </p>
       <h1 class="text-3xl md:text-4xl font-bold mt-2">
-        &iquest;Donde esta la mayor oportunidad de venta cruzada?
+        ¿Dónde está la mayor oportunidad de venta cruzada?
       </h1>
       <p class="text-slate-400 mt-3 max-w-3xl">
-        Market basket analysis: detecta que productos se compran juntos para
-        priorizar promociones, bundles y ubicacion en gondola. Autor:
+        Market basket analysis: detecta qué productos se compran juntos para
+        priorizar promociones, bundles y ubicación en góndola. Autor:
         <a href="https://github.com/pablomzzz" class="text-emerald-400 underline">pablomzzz</a>.
       </p>
     </div>
@@ -48,7 +48,7 @@
         Top 10 oportunidades de venta cruzada (por lift)
       </h2>
       <p class="text-sm text-slate-500 mb-3">
-        Lift = cuantas veces mas se compran juntos vs por azar. Mayor lift = mayor afinidad.
+        Lift = cuántas veces más se compran juntos vs por azar. Mayor lift = mayor afinidad.
       </p>
       <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
         <div class="chart-box"><canvas id="chartLift" aria-label="Top oportunidades por lift"></canvas></div>
@@ -63,9 +63,9 @@
         </div>
       </section>
       <section aria-labelledby="g3">
-        <h2 id="g3" class="text-lg font-semibold mb-3">Ventas por categoria</h2>
+        <h2 id="g3" class="text-lg font-semibold mb-3">Ventas por categoría</h2>
         <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-          <div class="chart-box"><canvas id="chartCategoria" aria-label="Ventas por categoria"></canvas></div>
+          <div class="chart-box"><canvas id="chartCategoria" aria-label="Ventas por categoría"></canvas></div>
         </div>
       </section>
     </div>
@@ -83,7 +83,7 @@
     </section>
 
     <footer class="border-t border-slate-800 pt-6 text-sm text-slate-500">
-      <p><strong>Datos sinteticos:</strong> generados con
+      <p><strong>Datos sintéticos:</strong> generados con
       <code>analysis/generar_datos.py</code>. No representan a ninguna empresa real.</p>
     </footer>
   </main>
@@ -98,8 +98,8 @@
       const d = await fetch("data.json").then((r) => r.json());
       renderKPIs(d.kpis);
       document.getElementById("insight-top").textContent =
-        `La combinacion con mayor afinidad es ${d.kpis.mejor_oportunidad} ` +
-        `(lift ${d.kpis.mejor_lift}): se compran juntos ${d.kpis.mejor_lift} veces mas ` +
+        `La combinación con mayor afinidad es ${d.kpis.mejor_oportunidad} ` +
+        `(lift ${d.kpis.mejor_lift}): se compran juntos ${d.kpis.mejor_lift} veces más ` +
         `que por azar. Oportunidad clara de bundle o promo cruzada.`;
       renderLift(d.top_oportunidades);
       renderProductos(d.top_productos);
@@ -120,11 +120,11 @@
         <div class="text-sm text-slate-400">Mejor oportunidad</div>
         <div class="text-base font-bold text-emerald-300 mt-1 leading-tight">${op}</div>
         <div class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-emerald-200 group-hover:underline">
-          lift ${lift} &middot; ver plan &darr;</div></a>`;
+          lift ${lift} · ver plan ↓</div></a>`;
     }
     function renderKPIs(k) {
       document.getElementById("kpis").innerHTML =
-        card("Ventas totales (90 dias)", MM(k.ventas_total)) +
+        card("Ventas totales (90 días)", MM(k.ventas_total)) +
         card("Boletas", new Intl.NumberFormat("es-CL").format(k.boletas), "sky") +
         card("Ticket promedio", CLP(k.ticket_promedio), "sky") +
         cardOportunidad(k.mejor_oportunidad, k.mejor_lift);
@@ -191,10 +191,10 @@
     function renderRecomendaciones(d) {
       const t = d.top_oportunidades;
       const items = [
-        `Crear bundle o promo cruzada para <strong>${d.kpis.mejor_oportunidad}</strong> (lift ${d.kpis.mejor_lift}): es la afinidad mas fuerte del surtido.`,
-        t[1] ? `Ubicar juntos en gondola <strong>${t[1].producto_a} + ${t[1].producto_b}</strong> (lift ${t[1].lift}).` : "",
-        "Usar las reglas de afinidad para recomendaciones en punto de venta y e-commerce (\"clientes que compraron X tambien llevaron Y\").",
-        "Revisar el mix por categoria: concentrar promociones donde el ticket y la rotacion lo justifiquen.",
+        `Crear bundle o promo cruzada para <strong>${d.kpis.mejor_oportunidad}</strong> (lift ${d.kpis.mejor_lift}): es la afinidad más fuerte del surtido.`,
+        t[1] ? `Ubicar juntos en góndola <strong>${t[1].producto_a} + ${t[1].producto_b}</strong> (lift ${t[1].lift}).` : "",
+        "Usar las reglas de afinidad para recomendaciones en punto de venta y e-commerce (\"clientes que compraron X también llevaron Y\").",
+        "Revisar el mix por categoría: concentrar promociones donde el ticket y la rotación lo justifiquen.",
       ].filter(Boolean);
       document.getElementById("recomendaciones").innerHTML = items.map((i) => `<li>${i}</li>`).join("");
     }

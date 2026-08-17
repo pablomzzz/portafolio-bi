@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riesgo Financiero de Empresas | Dashboard BI</title>
-  <meta name="description" content="Analisis de ratios financieros y score de riesgo: que empresas muestran senales de alerta." />
+  <meta name="description" content="Análisis de ratios financieros y score de riesgo: qué empresas muestran señales de alerta." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
@@ -20,14 +20,14 @@
   <header class="border-b border-slate-800 bg-slate-900/60">
     <div class="max-w-6xl mx-auto px-6 py-8">
       <p class="text-indigo-400 font-semibold tracking-wide uppercase text-sm">
-        Proyecto BI - Analisis financiero
+        Proyecto BI · Análisis financiero
       </p>
       <h1 class="text-3xl md:text-4xl font-bold mt-2">
-        &iquest;Que empresas muestran senales de riesgo?
+        ¿Qué empresas muestran señales de riesgo?
       </h1>
       <p class="text-slate-400 mt-3 max-w-3xl">
         Ratios financieros (liquidez, endeudamiento, margen) combinados en un
-        score de riesgo para priorizar revision de cartera o credito. Autor:
+        score de riesgo para priorizar revisión de cartera o crédito. Autor:
         <a href="https://github.com/pablomzzz" class="text-indigo-400 underline">pablomzzz</a>.
       </p>
     </div>
@@ -72,7 +72,7 @@
     </section>
 
     <footer class="border-t border-slate-800 pt-6 text-sm text-slate-500">
-      <p><strong>Datos sinteticos:</strong> generados con
+      <p><strong>Datos sintéticos:</strong> generados con
       <code>analysis/generar_datos.py</code>. No representan a ninguna empresa real.</p>
     </footer>
   </main>
@@ -88,7 +88,7 @@
       renderKPIs(d.kpis);
       const peor = d.ranking_riesgo[0];
       document.getElementById("insight-top").textContent =
-        `${peor.empresa} (${peor.sector}) es la mas riesgosa: score ${peor.score_riesgo}/100, ` +
+        `${peor.empresa} (${peor.sector}) es la más riesgosa: score ${peor.score_riesgo}/100, ` +
         `liquidez ${peor.liquidez} (bajo 1 = no cubre deudas de corto plazo), ` +
         `endeudamiento ${PCT(peor.endeudamiento)} y margen ${PCT(peor.margen_neto)}.`;
       renderScore(d.ranking_riesgo);
@@ -105,16 +105,16 @@
     function cardPeor(emp, score) {
       return `<a href="#resumen-bot" role="listitem"
           class="group block rounded-xl border border-rose-500/40 bg-rose-500/10 p-4 transition hover:bg-rose-500/20"
-          aria-label="Mas riesgosa: ${emp}. Ir a recomendaciones.">
-        <div class="text-sm text-slate-400">Mas riesgosa</div>
+          aria-label="Más riesgosa: ${emp}. Ir a recomendaciones.">
+        <div class="text-sm text-slate-400">Más riesgosa</div>
         <div class="text-base font-bold text-rose-300 mt-1">${emp}</div>
         <div class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-rose-200 group-hover:underline">
-          score ${score} &middot; ver plan &darr;</div></a>`;
+          score ${score} · ver plan ↓</div></a>`;
     }
     function renderKPIs(k) {
       document.getElementById("kpis").innerHTML =
         card("Empresas analizadas", k.empresas) +
-        card("En riesgo (score>=50)", k.en_riesgo, "rose") +
+        card("En riesgo (score≥50)", k.en_riesgo, "rose") +
         card("% de la cartera", k.pct_riesgo + "%", "amber") +
         cardPeor(k.mas_riesgosa, k.score_max);
     }
@@ -176,10 +176,10 @@
     function renderRecomendaciones(d) {
       const r = d.ranking_riesgo.filter((x) => x.score_riesgo >= 50);
       const items = [
-        r[0] ? `Revisar con prioridad <strong>${r[0].empresa}</strong> (score ${r[0].score_riesgo}): baja liquidez y alto endeudamiento la ponen en zona critica.` : "Ninguna empresa supera el umbral de riesgo alto.",
-        r[1] ? `Monitorear <strong>${r[1].empresa}</strong> (score ${r[1].score_riesgo}): senales de alerta que conviene vigilar de cerca.` : "",
-        `El sector <strong>${d.por_sector[0].sector}</strong> concentra el mayor riesgo promedio (${d.por_sector[0].riesgo_prom}): ajustar exposicion o condiciones de credito.`,
-        "Complementar el score con flujo de caja y covenants antes de decisiones de credito o inversion.",
+        r[0] ? `Revisar con prioridad <strong>${r[0].empresa}</strong> (score ${r[0].score_riesgo}): baja liquidez y alto endeudamiento la ponen en zona crítica.` : "Ninguna empresa supera el umbral de riesgo alto.",
+        r[1] ? `Monitorear <strong>${r[1].empresa}</strong> (score ${r[1].score_riesgo}): señales de alerta que conviene vigilar de cerca.` : "",
+        `El sector <strong>${d.por_sector[0].sector}</strong> concentra el mayor riesgo promedio (${d.por_sector[0].riesgo_prom}): ajustar exposición o condiciones de crédito.`,
+        "Complementar el score con flujo de caja y covenants antes de decisiones de crédito o inversión.",
       ].filter(Boolean);
       document.getElementById("recomendaciones").innerHTML = items.map((i) => `<li>${i}</li>`).join("");
     }

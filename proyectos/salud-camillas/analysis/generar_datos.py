@@ -41,12 +41,12 @@ SERVICIOS = {
     "Urgencias": (40, 0.9, 1.25),
     "UCI": (16, 0.7, 1.05),
     "Medicina Interna": (60, 0.8, 1.0),
-    "Cirugia": (45, 0.2, 0.75),
-    "Pediatria": (30, 0.85, 1.0),
+    "Cirugía": (45, 0.2, 0.75),
+    "Pediatría": (30, 0.85, 1.0),
     "Maternidad": (25, 0.1, 1.0),
 }
 
-TURNOS = ["Manana", "Tarde", "Noche"]
+TURNOS = ["Mañana", "Tarde", "Noche"]
 MESES_INVIERNO = {5, 6, 7, 8}  # campana de invierno en Chile
 
 
@@ -67,7 +67,7 @@ def factor_invierno(dia: date, sensibilidad: float) -> float:
 
 
 def factor_finde(dia: date, servicio: str) -> float:
-    """Cirugia electiva baja el fin de semana; urgencias sube."""
+    """Cirugía electiva baja el fin de semana; urgencias sube."""
     es_finde = dia.weekday() >= 5
     if not es_finde:
         return 1.0
@@ -84,7 +84,7 @@ def factor_turno(turno: str, factor_noche: float) -> float:
         return factor_noche
     if turno == "Tarde":
         return 1.05
-    return 0.95  # Manana
+    return 0.95  # Mañana
 
 
 def calcular_ocupadas(totales: int, presion: float, rng: random.Random) -> int:

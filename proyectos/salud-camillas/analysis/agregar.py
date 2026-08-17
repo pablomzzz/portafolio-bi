@@ -64,7 +64,7 @@ def por_turno(filas: list[dict]) -> list[dict]:
         g["ocup"].append(float(f["tasa_ocupacion"]))
         g["espera_min"].append(int(f["tiempo_espera_min_prom"]))
         g["en_espera"] += int(f["pacientes_en_espera"])
-    orden = ["Manana", "Tarde", "Noche"]
+    orden = ["Mañana", "Tarde", "Noche"]
     return [
         {
             "turno": t,

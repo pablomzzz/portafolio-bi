@@ -16,7 +16,7 @@ import random
 from dataclasses import dataclass
 from pathlib import Path
 
-SECTORES = ["Retail", "Tecnologia", "Manufactura", "Servicios", "Construccion"]
+SECTORES = ["Retail", "Tecnología", "Manufactura", "Servicios", "Construcción"]
 
 # perfil de riesgo -> (margen base, endeudamiento base, liquidez base, crecimiento base)
 PERFILES = {

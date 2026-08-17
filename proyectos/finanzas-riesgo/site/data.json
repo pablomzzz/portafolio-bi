@@ -9,7 +9,7 @@
   "ranking_riesgo": [
     {
       "empresa": "Empresa M",
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "anio": 2025,
       "margen_neto": -0.017,
       "liquidez": 0.84,
@@ -33,7 +33,7 @@
     },
     {
       "empresa": "Empresa H",
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "anio": 2025,
       "margen_neto": 0.064,
       "liquidez": 1.22,
@@ -105,7 +105,7 @@
     },
     {
       "empresa": "Empresa P",
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "anio": 2025,
       "margen_neto": 0.081,
       "liquidez": 1.45,
@@ -153,7 +153,7 @@
     },
     {
       "empresa": "Empresa E",
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "anio": 2025,
       "margen_neto": 0.089,
       "liquidez": 1.45,
@@ -165,7 +165,7 @@
     },
     {
       "empresa": "Empresa I",
-      "sector": "Construccion",
+      "sector": "Construcción",
       "anio": 2025,
       "margen_neto": 0.074,
       "liquidez": 1.36,
@@ -213,7 +213,7 @@
     },
     {
       "empresa": "Empresa Q",
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "anio": 2025,
       "margen_neto": 0.113,
       "liquidez": 2.05,
@@ -225,7 +225,7 @@
     },
     {
       "empresa": "Empresa R",
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "anio": 2025,
       "margen_neto": 0.127,
       "liquidez": 2.04,
@@ -254,7 +254,7 @@
       "riesgo_prom": 32
     },
     {
-      "sector": "Tecnologia",
+      "sector": "Tecnología",
       "riesgo_prom": 19
     },
     {
@@ -262,7 +262,7 @@
       "riesgo_prom": 13
     },
     {
-      "sector": "Construccion",
+      "sector": "Construcción",
       "riesgo_prom": 8
     },
     {
