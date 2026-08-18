@@ -157,7 +157,7 @@ def escribir_csv(filas: list[dict], salida: Path) -> None:
 
 def parse_args() -> Config:
     p = argparse.ArgumentParser(description="Genera datos sinteticos de camillas.")
-    p.add_argument("--dias", type=int, default=90, help="Dias de historia (def 90)")
+    p.add_argument("--dias", type=int, default=365, help="Dias de historia (def 365)")
     p.add_argument("--seed", type=int, default=42, help="Semilla aleatoria (def 42)")
     p.add_argument(
         "--salida", type=Path,

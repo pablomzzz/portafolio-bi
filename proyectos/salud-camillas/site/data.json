@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "filas": 6480,
-    "pct_rojo": 13.4,
-    "total_en_espera": 1453,
+    "filas": 26280,
+    "pct_rojo": 5.9,
+    "total_en_espera": 2519,
     "peor_pabellon": "Urgencias / Noche - Hospital Metropolitano Central"
   },
   "top_rojo": [
@@ -10,151 +10,151 @@
       "hospital": "Hospital Metropolitano Central",
       "servicio": "Urgencias",
       "turno": "Noche",
-      "espera": 515,
-      "ocupacion": 1.0,
-      "veces_rojo": 90
+      "espera": 1115,
+      "ocupacion": 0.995,
+      "veces_rojo": 333
     },
     {
       "hospital": "Hospital Regional Norte",
       "servicio": "Urgencias",
       "turno": "Noche",
-      "espera": 371,
-      "ocupacion": 1.0,
-      "veces_rojo": 90
+      "espera": 622,
+      "ocupacion": 0.994,
+      "veces_rojo": 262
     },
     {
       "hospital": "Hospital Metropolitano Central",
       "servicio": "Urgencias",
       "turno": "Tarde",
-      "espera": 167,
-      "ocupacion": 0.996,
-      "veces_rojo": 80
+      "espera": 238,
+      "ocupacion": 0.99,
+      "veces_rojo": 145
     },
     {
       "hospital": "Hospital Costa Poniente",
       "servicio": "Urgencias",
       "turno": "Noche",
-      "espera": 139,
-      "ocupacion": 0.993,
-      "veces_rojo": 68
-    },
-    {
-      "hospital": "Hospital Metropolitano Central",
-      "servicio": "Medicina Interna",
-      "turno": "Tarde",
-      "espera": 59,
-      "ocupacion": 0.989,
-      "veces_rojo": 68
+      "espera": 197,
+      "ocupacion": 0.99,
+      "veces_rojo": 136
     },
     {
       "hospital": "Hospital Regional Norte",
       "servicio": "Urgencias",
       "turno": "Tarde",
-      "espera": 58,
+      "espera": 77,
       "ocupacion": 0.989,
-      "veces_rojo": 57
+      "veces_rojo": 77
     },
     {
       "hospital": "Hospital Metropolitano Central",
       "servicio": "Urgencias",
       "turno": "Mañana",
-      "espera": 51,
-      "ocupacion": 0.986,
-      "veces_rojo": 40
+      "espera": 67,
+      "ocupacion": 0.984,
+      "veces_rojo": 68
     },
     {
       "hospital": "Hospital Metropolitano Central",
       "servicio": "Pediatría",
       "turno": "Tarde",
-      "espera": 44,
-      "ocupacion": 0.991,
-      "veces_rojo": 64
+      "espera": 53,
+      "ocupacion": 0.992,
+      "veces_rojo": 89
+    },
+    {
+      "hospital": "Hospital Metropolitano Central",
+      "servicio": "Medicina Interna",
+      "turno": "Tarde",
+      "espera": 53,
+      "ocupacion": 0.986,
+      "veces_rojo": 65
     },
     {
       "hospital": "Hospital del Valle",
       "servicio": "Urgencias",
       "turno": "Noche",
-      "espera": 24,
-      "ocupacion": 0.991,
-      "veces_rojo": 25
+      "espera": 29,
+      "ocupacion": 0.989,
+      "veces_rojo": 31
     },
     {
       "hospital": "Hospital Regional Norte",
       "servicio": "Urgencias",
       "turno": "Mañana",
-      "espera": 1,
-      "ocupacion": 0.985,
-      "veces_rojo": 17
+      "espera": 2,
+      "ocupacion": 0.991,
+      "veces_rojo": 22
     }
   ],
   "por_turno": [
     {
       "turno": "Mañana",
-      "ocupacion": 0.743,
-      "espera_min": 17,
-      "en_espera": 52
+      "ocupacion": 0.687,
+      "espera_min": 16,
+      "en_espera": 69
     },
     {
       "turno": "Tarde",
-      "ocupacion": 0.817,
-      "espera_min": 27,
-      "en_espera": 347
+      "ocupacion": 0.756,
+      "espera_min": 19,
+      "en_espera": 447
     },
     {
       "turno": "Noche",
-      "ocupacion": 0.776,
-      "espera_min": 31,
-      "en_espera": 1054
+      "ocupacion": 0.723,
+      "espera_min": 25,
+      "en_espera": 2003
     }
   ],
   "por_hospital": [
     {
       "hospital": "Hospital Metropolitano Central",
-      "ocupacion": 0.885
+      "ocupacion": 0.827
     },
     {
       "hospital": "Hospital Regional Norte",
-      "ocupacion": 0.828
+      "ocupacion": 0.769
     },
     {
       "hospital": "Hospital Costa Poniente",
-      "ocupacion": 0.744
+      "ocupacion": 0.687
     },
     {
       "hospital": "Hospital del Valle",
-      "ocupacion": 0.656
+      "ocupacion": 0.605
     }
   ],
   "invierno_vs_resto": [
     {
       "servicio": "Cirugía",
-      "invierno": 0.655,
-      "resto": 0.0
+      "invierno": 0.656,
+      "resto": 0.628
     },
     {
       "servicio": "Maternidad",
-      "invierno": 0.7,
-      "resto": 0.0
+      "invierno": 0.701,
+      "resto": 0.686
     },
     {
       "servicio": "Medicina Interna",
-      "invierno": 0.807,
-      "resto": 0.0
+      "invierno": 0.802,
+      "resto": 0.685
     },
     {
       "servicio": "Pediatría",
-      "invierno": 0.812,
-      "resto": 0.0
+      "invierno": 0.81,
+      "resto": 0.686
     },
     {
       "servicio": "UCI",
-      "invierno": 0.803,
-      "resto": 0.0
+      "invierno": 0.801,
+      "resto": 0.698
     },
     {
       "servicio": "Urgencias",
-      "invierno": 0.894,
-      "resto": 0.0
+      "invierno": 0.895,
+      "resto": 0.778
     }
   ]
 }
