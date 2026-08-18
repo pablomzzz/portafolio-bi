@@ -8,6 +8,12 @@ venv/
 *.tmp
 ~$*
 
+# Power BI Project (.pbip): versionar el modelo y el reporte, pero NO
+# los settings/cache locales de cada maquina.
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/*.abf
+
 # Sistema
 .DS_Store
 Thumbs.db
