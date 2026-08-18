@@ -15,6 +15,23 @@ cuantifica y termina en una recomendación accionable.
 | [Oportunidades de venta cruzada](proyectos/retail-oportunidades/) | Retail | ¿Dónde está la mayor oportunidad comercial? | Listo |
 | [Salud financiera de empresas](proyectos/finanzas-riesgo/) | Finanzas | ¿Qué empresas muestran señales de riesgo? | Listo |
 
+## Análisis reproducible (Jupyter Notebooks)
+
+Cada proyecto incluye un notebook con el análisis completo en **pandas + matplotlib**
+(GitHub los renderiza con los gráficos incrustados):
+
+| Notebook | Qué muestra |
+|---|---|
+| [salud](proyectos/salud-camillas/analisis_ocupacion.ipynb) | EDA de ocupación, pabellones críticos, efecto invierno |
+| [retail](proyectos/retail-oportunidades/analisis_market_basket.ipynb) | Market basket: soporte, confianza, lift |
+| [finanzas](proyectos/finanzas-riesgo/analisis_riesgo.ipynb) | Ratios financieros + score de riesgo |
+
+Para ejecutarlos localmente:
+```bash
+uv venv && uv pip install pandas matplotlib seaborn notebook
+jupyter notebook   # abre el .ipynb del proyecto que quieras
+```
+
 ## Cómo se publica (GitHub Pages)
 
 1. Repo: `pablomzzz/portafolio-bi`.
