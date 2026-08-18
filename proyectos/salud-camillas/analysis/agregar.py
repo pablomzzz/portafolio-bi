@@ -23,7 +23,7 @@ UMBRAL_ROJO = 0.95
 
 
 def leer_filas(ruta: Path) -> list[dict]:
-    with ruta.open(encoding="utf-8") as fh:
+    with ruta.open(encoding="utf-8-sig") as fh:
         return list(csv.DictReader(fh))
 
 

@@ -17,12 +17,13 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 CSV = RAIZ / "data" / "estados_financieros.csv"
 SALIDA = RAIZ / "site" / "data.json"
+POWERBI_CSV = RAIZ / "powerbi" / "ratios_riesgo.csv"
 
 UMBRAL_RIESGO = 50  # score >= 50 se considera "en riesgo"
 
 
 def leer_filas(ruta: Path) -> list[dict]:
-    with ruta.open(encoding="utf-8") as fh:
+    with ruta.open(encoding="utf-8-sig") as fh:
         filas = list(csv.DictReader(fh))
     for f in filas:
         for k in ("anio", "ingresos", "costos", "utilidad_neta", "activo_corriente",
@@ -101,9 +102,22 @@ def kpis(res: list[dict]) -> dict:
     }
 
 
+def exportar_powerbi(res: list[dict]) -> None:
+    """Exporta ratios + score ya calculados a un CSV listo para Power BI."""
+    POWERBI_CSV.parent.mkdir(parents=True, exist_ok=True)
+    campos = ["empresa", "sector", "anio", "margen_neto", "liquidez",
+              "endeudamiento", "roe", "crecimiento", "score_riesgo", "nivel"]
+    with POWERBI_CSV.open("w", newline="", encoding="utf-8-sig") as fh:
+        w = csv.DictWriter(fh, fieldnames=campos)
+        w.writeheader()
+        w.writerows(res)
+    print(f"[OK] CSV Power BI -> {POWERBI_CSV} ({len(res)} empresas)")
+
+
 def main() -> None:
     filas = leer_filas(CSV)
     res = analizar(filas)
+    exportar_powerbi(res)
     data = {
         "kpis": kpis(res),
         "ranking_riesgo": res,

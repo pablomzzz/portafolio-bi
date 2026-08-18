@@ -1,0 +1,149 @@
+﻿producto_a,producto_b,soporte,confianza_a_b,lift,boletas
+Pañales,Toallitas húmedas,0.0734,0.741,4.64,367
+Azúcar,Café,0.0666,0.327,3.44,333
+Cloro,Detergente,0.0516,0.348,3.22,258
+Detergente,Esponjas,0.0436,0.404,2.99,218
+Mantequilla,Pan molde,0.0612,0.311,2.98,306
+Azúcar,Té,0.0576,0.283,2.96,288
+Mantequilla,Pan hallulla,0.0576,0.293,2.86,288
+Café,Galletas,0.034,0.357,2.83,170
+Cerveza,Papas fritas,0.061,0.499,2.8,305
+Cerveza,Maní,0.052,0.426,2.8,260
+Cerveza,Pañales,0.0314,0.257,2.6,157
+Queso,Vino tinto,0.0532,0.258,2.56,266
+Bebida cola,Papas fritas,0.0434,0.421,2.36,217
+Pan molde,Queso,0.0462,0.443,2.14,231
+Pan hallulla,Queso,0.0438,0.427,2.07,219
+Cerveza,Toallitas húmedas,0.0286,0.234,1.46,143
+Azúcar,Galletas,0.0374,0.184,1.45,187
+Mantequilla,Queso,0.0588,0.299,1.45,294
+Maní,Papas fritas,0.0384,0.253,1.42,192
+Cloro,Esponjas,0.0276,0.186,1.38,138
+Bebida cola,Cerveza,0.0124,0.12,0.99,62
+Pan hallulla,Papas fritas,0.0182,0.177,0.99,91
+Café,Esponjas,0.0128,0.134,0.99,64
+Café,Maní,0.0136,0.143,0.94,68
+Maní,Vino tinto,0.0144,0.095,0.94,72
+Cerveza,Pan hallulla,0.0114,0.093,0.91,57
+Cloro,Maní,0.0204,0.138,0.91,102
+Croissant,Maní,0.0128,0.139,0.91,64
+Jugo naranja,Queso,0.019,0.187,0.9,95
+Cloro,Vino tinto,0.0134,0.09,0.9,67
+Leche,Mantequilla,0.0158,0.174,0.89,79
+Toallitas húmedas,Yogurt,0.0134,0.084,0.89,67
+Café,Mantequilla,0.0164,0.172,0.88,82
+Galletas,Toallitas húmedas,0.0176,0.139,0.87,88
+Café,Queso,0.017,0.179,0.87,85
+Toallitas húmedas,Té,0.0132,0.083,0.86,66
+Cerveza,Cloro,0.0156,0.128,0.86,78
+Cloro,Té,0.012,0.081,0.85,60
+Bebida cola,Queso,0.018,0.175,0.85,90
+Galletas,Queso,0.0222,0.176,0.85,111
+Esponjas,Toallitas húmedas,0.0184,0.136,0.85,92
+Croissant,Papas fritas,0.0138,0.15,0.84,69
+Leche,Papas fritas,0.0136,0.15,0.84,68
+Café,Toallitas húmedas,0.0128,0.134,0.84,64
+Queso,Toallitas húmedas,0.0278,0.135,0.84,139
+Leche,Toallitas húmedas,0.0122,0.135,0.84,61
+Galletas,Jugo naranja,0.0108,0.085,0.84,54
+Esponjas,Vino tinto,0.0114,0.084,0.84,57
+Galletas,Pañales,0.0104,0.082,0.83,52
+Agua mineral,Mantequilla,0.016,0.163,0.83,80
+Cerveza,Mantequilla,0.02,0.164,0.83,100
+Esponjas,Galletas,0.0142,0.105,0.83,71
+Azúcar,Pan molde,0.0176,0.087,0.83,88
+Mantequilla,Maní,0.0248,0.126,0.83,124
+Papas fritas,Té,0.0142,0.08,0.83,71
+Bebida cola,Maní,0.0128,0.124,0.82,64
+Azúcar,Detergente,0.018,0.088,0.82,90
+Detergente,Papas fritas,0.0158,0.146,0.82,79
+Queso,Yogurt,0.016,0.078,0.82,80
+Cloro,Mantequilla,0.0238,0.161,0.82,119
+Mantequilla,Papas fritas,0.0286,0.145,0.82,143
+Detergente,Maní,0.0134,0.124,0.82,67
+Cloro,Leche,0.011,0.074,0.82,55
+Azúcar,Toallitas húmedas,0.0262,0.129,0.81,131
+Azúcar,Esponjas,0.0224,0.11,0.81,112
+Café,Cloro,0.0114,0.12,0.81,57
+Esponjas,Mantequilla,0.0216,0.16,0.81,108
+Galletas,Mantequilla,0.0198,0.157,0.8,99
+Azúcar,Jugo naranja,0.0166,0.082,0.8,83
+Papas fritas,Pañales,0.0142,0.08,0.8,71
+Cloro,Papas fritas,0.021,0.142,0.79,105
+Pañales,Queso,0.0162,0.164,0.79,81
+Agua mineral,Maní,0.0118,0.12,0.79,59
+Esponjas,Papas fritas,0.019,0.141,0.79,95
+Detergente,Galletas,0.0108,0.1,0.79,54
+Pan hallulla,Toallitas húmedas,0.0128,0.125,0.78,64
+Cerveza,Pan molde,0.01,0.082,0.78,50
+Bebida cola,Galletas,0.0102,0.099,0.78,51
+Galletas,Maní,0.015,0.119,0.78,75
+Agua mineral,Queso,0.0158,0.161,0.78,79
+Detergente,Queso,0.0174,0.161,0.78,87
+Azúcar,Leche,0.0144,0.071,0.78,72
+Croissant,Toallitas húmedas,0.0114,0.124,0.77,57
+Maní,Pan hallulla,0.012,0.079,0.77,60
+Maní,Yogurt,0.011,0.072,0.77,55
+Cloro,Galletas,0.0144,0.097,0.77,72
+Esponjas,Jugo naranja,0.0106,0.078,0.77,53
+Esponjas,Queso,0.0214,0.158,0.77,107
+Maní,Pan molde,0.0122,0.08,0.77,61
+Leche,Queso,0.0144,0.159,0.77,72
+Azúcar,Pañales,0.0154,0.076,0.76,77
+Azúcar,Cloro,0.0228,0.112,0.76,114
+Cloro,Croissant,0.0104,0.07,0.76,52
+Esponjas,Pañales,0.0102,0.075,0.76,51
+Cerveza,Detergente,0.01,0.082,0.76,50
+Bebida cola,Esponjas,0.0106,0.103,0.76,53
+Azúcar,Croissant,0.014,0.069,0.75,70
+Azúcar,Queso,0.0316,0.155,0.75,158
+Bebida cola,Cloro,0.0114,0.111,0.75,57
+Detergente,Toallitas húmedas,0.0128,0.119,0.74,64
+Agua mineral,Azúcar,0.0148,0.15,0.74,74
+Cloro,Pan hallulla,0.0112,0.076,0.74,56
+Azúcar,Bebida cola,0.0156,0.077,0.74,78
+Azúcar,Mantequilla,0.0296,0.146,0.74,148
+Azúcar,Vino tinto,0.0152,0.075,0.74,76
+Jugo naranja,Toallitas húmedas,0.012,0.118,0.74,60
+Cerveza,Galletas,0.0114,0.093,0.74,57
+Maní,Queso,0.0232,0.153,0.74,116
+Mantequilla,Té,0.014,0.071,0.74,70
+Mantequilla,Pañales,0.0142,0.072,0.73,71
+Galletas,Papas fritas,0.0164,0.13,0.73,82
+Cerveza,Queso,0.0184,0.151,0.73,92
+Cloro,Queso,0.0222,0.15,0.73,111
+Maní,Pañales,0.011,0.072,0.73,55
+Agua mineral,Toallitas húmedas,0.0114,0.116,0.72,57
+Azúcar,Pan hallulla,0.015,0.074,0.72,75
+Cloro,Pañales,0.0106,0.072,0.72,53
+Cloro,Pan molde,0.0112,0.076,0.72,56
+Pan molde,Toallitas húmedas,0.0118,0.113,0.71,59
+Agua mineral,Papas fritas,0.0124,0.126,0.71,62
+Detergente,Mantequilla,0.015,0.139,0.71,75
+Café,Papas fritas,0.012,0.126,0.71,60
+Papas fritas,Toallitas húmedas,0.0202,0.113,0.71,101
+Azúcar,Papas fritas,0.0254,0.125,0.7,127
+Queso,Té,0.0138,0.067,0.7,69
+Jugo naranja,Mantequilla,0.014,0.138,0.7,70
+Mantequilla,Vino tinto,0.0138,0.07,0.7,69
+Mantequilla,Yogurt,0.013,0.066,0.7,65
+Maní,Toallitas húmedas,0.017,0.112,0.7,85
+Azúcar,Maní,0.0212,0.104,0.69,106
+Mantequilla,Toallitas húmedas,0.0218,0.111,0.69,109
+Papas fritas,Yogurt,0.0116,0.065,0.69,58
+Azúcar,Yogurt,0.013,0.064,0.68,65
+Toallitas húmedas,Vino tinto,0.0108,0.068,0.67,54
+Cloro,Jugo naranja,0.01,0.067,0.66,50
+Papas fritas,Queso,0.0244,0.137,0.66,122
+Bebida cola,Mantequilla,0.0134,0.13,0.66,67
+Jugo naranja,Maní,0.01,0.098,0.65,50
+Croissant,Mantequilla,0.0118,0.128,0.65,59
+Azúcar,Cerveza,0.016,0.079,0.64,80
+Jugo naranja,Papas fritas,0.0116,0.114,0.64,58
+Pan molde,Papas fritas,0.012,0.115,0.64,60
+Esponjas,Maní,0.0132,0.098,0.64,66
+Bebida cola,Toallitas húmedas,0.0104,0.101,0.63,52
+Cloro,Toallitas húmedas,0.015,0.101,0.63,75
+Cerveza,Esponjas,0.01,0.082,0.61,50
+Croissant,Queso,0.0114,0.124,0.6,57
+Papas fritas,Vino tinto,0.0104,0.058,0.58,52

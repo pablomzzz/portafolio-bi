@@ -1,4 +1,4 @@
-empresa,sector,anio,ingresos,costos,utilidad_neta,activo_corriente,pasivo_corriente,activo_total,deuda_total,patrimonio
+﻿empresa,sector,anio,ingresos,costos,utilidad_neta,activo_corriente,pasivo_corriente,activo_total,deuda_total,patrimonio
 Empresa A,Retail,2022,27480585419,22905486312,4575099108,10253585420,6159955418,36695038427,13524082870,23170955557
 Empresa A,Retail,2023,28936499194,25797252092,3139247101,7330904383,4241593178,23609914194,8276745947,15333168248
 Empresa A,Retail,2024,31960194025,28486461321,3473732704,13181284285,8143108251,41089887887,14766592039,26323295848

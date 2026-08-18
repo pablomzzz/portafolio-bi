@@ -1,185 +1,185 @@
 {
   "kpis": {
-    "ventas_total": 48181600,
+    "ventas_total": 48234300,
     "boletas": 5000,
-    "ticket_promedio": 9636,
+    "ticket_promedio": 9647,
     "mejor_oportunidad": "Pañales + Toallitas húmedas",
-    "mejor_lift": 4.7
+    "mejor_lift": 4.64
   },
   "top_oportunidades": [
     {
       "producto_a": "Pañales",
       "producto_b": "Toallitas húmedas",
-      "soporte": 0.0752,
-      "confianza_a_b": 0.755,
-      "lift": 4.7,
-      "boletas": 376
+      "soporte": 0.0734,
+      "confianza_a_b": 0.741,
+      "lift": 4.64,
+      "boletas": 367
     },
     {
       "producto_a": "Azúcar",
       "producto_b": "Café",
-      "soporte": 0.0662,
-      "confianza_a_b": 0.331,
-      "lift": 3.46,
-      "boletas": 331
+      "soporte": 0.0666,
+      "confianza_a_b": 0.327,
+      "lift": 3.44,
+      "boletas": 333
     },
     {
       "producto_a": "Cloro",
       "producto_b": "Detergente",
-      "soporte": 0.0512,
-      "confianza_a_b": 0.35,
-      "lift": 3.24,
-      "boletas": 256
-    },
-    {
-      "producto_a": "Mantequilla",
-      "producto_b": "Pan molde",
-      "soporte": 0.0632,
-      "confianza_a_b": 0.312,
-      "lift": 3.11,
-      "boletas": 316
-    },
-    {
-      "producto_a": "Azúcar",
-      "producto_b": "Té",
-      "soporte": 0.0552,
-      "confianza_a_b": 0.276,
-      "lift": 3.0,
-      "boletas": 276
+      "soporte": 0.0516,
+      "confianza_a_b": 0.348,
+      "lift": 3.22,
+      "boletas": 258
     },
     {
       "producto_a": "Detergente",
       "producto_b": "Esponjas",
-      "soporte": 0.043,
-      "confianza_a_b": 0.397,
+      "soporte": 0.0436,
+      "confianza_a_b": 0.404,
       "lift": 2.99,
-      "boletas": 215
+      "boletas": 218
     },
     {
-      "producto_a": "Cerveza",
-      "producto_b": "Papas fritas",
-      "soporte": 0.0652,
-      "confianza_a_b": 0.533,
-      "lift": 2.89,
-      "boletas": 326
+      "producto_a": "Mantequilla",
+      "producto_b": "Pan molde",
+      "soporte": 0.0612,
+      "confianza_a_b": 0.311,
+      "lift": 2.98,
+      "boletas": 306
+    },
+    {
+      "producto_a": "Azúcar",
+      "producto_b": "Té",
+      "soporte": 0.0576,
+      "confianza_a_b": 0.283,
+      "lift": 2.96,
+      "boletas": 288
     },
     {
       "producto_a": "Mantequilla",
       "producto_b": "Pan hallulla",
-      "soporte": 0.06,
-      "confianza_a_b": 0.296,
-      "lift": 2.8,
-      "boletas": 300
+      "soporte": 0.0576,
+      "confianza_a_b": 0.293,
+      "lift": 2.86,
+      "boletas": 288
     },
     {
       "producto_a": "Café",
       "producto_b": "Galletas",
-      "soporte": 0.0336,
-      "confianza_a_b": 0.351,
-      "lift": 2.74,
-      "boletas": 168
+      "soporte": 0.034,
+      "confianza_a_b": 0.357,
+      "lift": 2.83,
+      "boletas": 170
+    },
+    {
+      "producto_a": "Cerveza",
+      "producto_b": "Papas fritas",
+      "soporte": 0.061,
+      "confianza_a_b": 0.499,
+      "lift": 2.8,
+      "boletas": 305
     },
     {
       "producto_a": "Cerveza",
       "producto_b": "Maní",
-      "soporte": 0.0488,
-      "confianza_a_b": 0.399,
-      "lift": 2.69,
-      "boletas": 244
+      "soporte": 0.052,
+      "confianza_a_b": 0.426,
+      "lift": 2.8,
+      "boletas": 260
     }
   ],
   "top_productos": [
     {
       "producto": "Queso",
-      "monto": 6205500
+      "monto": 6345000
     },
     {
       "producto": "Pañales",
-      "monto": 5520000
+      "monto": 5472000
     },
     {
       "producto": "Detergente",
-      "monto": 4108500
-    },
-    {
-      "producto": "Mantequilla",
-      "monto": 3450000
+      "monto": 4169000
     },
     {
       "producto": "Vino tinto",
-      "monto": 3410000
+      "monto": 3440000
+    },
+    {
+      "producto": "Mantequilla",
+      "monto": 3357500
     },
     {
       "producto": "Cerveza",
-      "monto": 3045000
+      "monto": 3048500
     },
     {
       "producto": "Café",
-      "monto": 2608000
+      "monto": 2616000
     },
     {
       "producto": "Toallitas húmedas",
-      "monto": 2455200
+      "monto": 2413400
     },
     {
       "producto": "Papas fritas",
-      "monto": 2293200
+      "monto": 2224800
     },
     {
       "producto": "Azúcar",
-      "monto": 1790100
+      "monto": 1817400
     }
   ],
   "por_categoria": [
     {
       "categoria": "Lácteos",
-      "monto": 10989900
+      "monto": 10984100
     },
     {
       "categoria": "Bebé",
-      "monto": 7975200
+      "monto": 7885400
     },
     {
       "categoria": "Limpieza",
-      "monto": 6593700
+      "monto": 6702800
     },
     {
       "categoria": "Alcohol",
-      "monto": 6455000
+      "monto": 6488500
     },
     {
       "categoria": "Café/Té",
-      "monto": 5978100
+      "monto": 6055900
     },
     {
       "categoria": "Snacks",
-      "monto": 4401000
+      "monto": 4346800
     },
     {
       "categoria": "Panadería",
-      "monto": 2968800
+      "monto": 2973600
     },
     {
       "categoria": "Bebidas",
-      "monto": 2819900
+      "monto": 2797200
     }
   ],
   "por_tienda": [
     {
       "tienda": "Tienda Norte",
-      "monto": 12436300
+      "monto": 12550400
     },
     {
       "tienda": "Tienda Centro",
-      "monto": 12238400
+      "monto": 12176700
     },
     {
       "tienda": "Tienda Mall",
-      "monto": 12100000
+      "monto": 11834600
     },
     {
       "tienda": "Tienda Sur",
-      "monto": 11406900
+      "monto": 11672600
     }
   ]
 }

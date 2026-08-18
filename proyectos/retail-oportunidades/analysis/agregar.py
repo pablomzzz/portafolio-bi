@@ -20,13 +20,14 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 CSV = RAIZ / "data" / "transacciones.csv"
 SALIDA = RAIZ / "site" / "data.json"
+POWERBI_CSV = RAIZ / "powerbi" / "oportunidades_cross_sell.csv"
 
 SOPORTE_MIN = 0.01   # el par debe aparecer en al menos 1% de las boletas
 TOP_N = 10
 
 
 def leer_filas(ruta: Path) -> list[dict]:
-    with ruta.open(encoding="utf-8") as fh:
+    with ruta.open(encoding="utf-8-sig") as fh:
         return list(csv.DictReader(fh))
 
 
@@ -90,10 +91,23 @@ def kpis(filas: list[dict], top: list[dict]) -> dict:
     }
 
 
+def exportar_powerbi(pares: list[dict]) -> None:
+    """Exporta TODAS las reglas de asociacion a un CSV listo para Power BI."""
+    POWERBI_CSV.parent.mkdir(parents=True, exist_ok=True)
+    campos = ["producto_a", "producto_b", "soporte", "confianza_a_b", "lift", "boletas"]
+    with POWERBI_CSV.open("w", newline="", encoding="utf-8-sig") as fh:
+        w = csv.DictWriter(fh, fieldnames=campos)
+        w.writeheader()
+        w.writerows(pares)
+    print(f"[OK] CSV Power BI -> {POWERBI_CSV} ({len(pares)} pares)")
+
+
 def main() -> None:
     filas = leer_filas(CSV)
     cestas = canastas(filas)
-    top = market_basket(cestas)[:TOP_N]
+    todos = market_basket(cestas)
+    top = todos[:TOP_N]
+    exportar_powerbi(todos)
     data = {
         "kpis": kpis(filas, top),
         "top_oportunidades": top,

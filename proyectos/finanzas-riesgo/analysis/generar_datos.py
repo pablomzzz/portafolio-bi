@@ -84,7 +84,7 @@ def generar_filas(cfg: Config) -> list[dict]:
 
 def escribir_csv(filas: list[dict], salida: Path) -> None:
     salida.parent.mkdir(parents=True, exist_ok=True)
-    with salida.open("w", newline="", encoding="utf-8") as fh:
+    with salida.open("w", newline="", encoding="utf-8-sig") as fh:
         writer = csv.DictWriter(fh, fieldnames=list(filas[0].keys()))
         writer.writeheader()
         writer.writerows(filas)

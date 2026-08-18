@@ -1,0 +1,21 @@
+﻿empresa,sector,anio,margen_neto,liquidez,endeudamiento,roe,crecimiento,score_riesgo,nivel
+Empresa M,Tecnología,2025,-0.017,0.84,0.865,-0.093,-0.021,65,Alto
+Empresa J,Manufactura,2025,-0.025,1.03,0.828,-0.126,-0.02,63,Medio
+Empresa H,Tecnología,2025,0.064,1.22,0.62,0.132,0.02,24,Bajo
+Empresa L,Servicios,2025,0.084,1.17,0.62,0.235,0.059,19,Bajo
+Empresa N,Servicios,2025,0.08,1.18,0.623,0.172,0.052,19,Bajo
+Empresa D,Manufactura,2025,0.092,1.24,0.591,0.178,0.025,18,Bajo
+Empresa K,Retail,2025,0.061,1.17,0.489,0.086,0.022,16,Bajo
+Empresa O,Manufactura,2025,0.06,1.3,0.54,0.108,0.044,15,Bajo
+Empresa P,Tecnología,2025,0.081,1.45,0.615,0.159,0.026,15,Bajo
+Empresa S,Servicios,2025,0.052,1.28,0.51,0.107,0.055,15,Bajo
+Empresa C,Retail,2025,0.093,1.2,0.543,0.213,0.036,14,Bajo
+Empresa F,Retail,2025,0.046,1.33,0.471,0.076,0.03,13,Bajo
+Empresa E,Tecnología,2025,0.089,1.45,0.518,0.22,0.055,8,Bajo
+Empresa I,Construcción,2025,0.074,1.36,0.474,0.167,0.043,8,Bajo
+Empresa A,Retail,2025,0.122,1.81,0.314,0.129,0.12,0,Bajo
+Empresa B,Retail,2025,0.177,2.0,0.315,0.255,0.095,0,Bajo
+Empresa G,Retail,2025,0.095,2.11,0.34,0.143,0.148,0,Bajo
+Empresa Q,Tecnología,2025,0.113,2.05,0.323,0.141,0.097,0,Bajo
+Empresa R,Tecnología,2025,0.127,2.04,0.298,0.178,0.127,0,Bajo
+Empresa T,Servicios,2025,0.113,2.16,0.336,0.146,0.097,0,Bajo
