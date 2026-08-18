@@ -7,6 +7,9 @@ priorizar revisión de cartera, crédito o inversión.
 
 **Autor:** Pablo Morales ([@pablomzzz](https://github.com/pablomzzz))
 
+[Dashboard en vivo](https://pablomzzz.github.io/portafolio-bi/proyectos/finanzas-riesgo/site/)
+· [Notebook de análisis](analisis_riesgo.ipynb)
+
 ## El caso de negocio
 
 Un analista de riesgo o un comité de crédito no quiere leer 20 balances. Quiere:
@@ -33,31 +36,55 @@ aporta hasta ~25 puntos.
 
 | Habilidad | Dónde |
 |---|---|
-| SQL (window functions, self-join por MAX(anio)) | `analysis/consultas.sql` |
-| Python / modelado de score | `analysis/agregar.py` |
-| Conocimiento de negocio (ratios financieros) | método y recomendaciones |
-| Viz web (scatter de riesgo, ranking) | `site/` |
+| **ETL / limpieza** | `data/estados_financieros_raw.csv` (sucio) + `powerbi/ETL_POWERQUERY.md` |
+| **SQL** | `analysis/consultas.sql` (window functions, self-join por MAX(anio)) |
+| **Python / modelado de score** | `analysis/agregar.py`, `agregar_detalle.py` |
+| **Modelado + DAX** | `powerbi/MODELO.md` + `powerbi/README.md` |
+| **Conocimiento de negocio** | ratios financieros: método y recomendaciones |
+| **Viz interactiva** | `site/` (filtros por sector/nivel, scatter de riesgo, ranking) |
 
 ## Cómo reproducir
 
 ```bash
 python analysis/generar_datos.py    # data/estados_financieros.csv (20 empresas x 4 años)
-python analysis/agregar.py          # ratios + score → site/data.json
+python analysis/agregar.py          # ratios + score -> site/data.json + powerbi/ratios_riesgo.csv
+python analysis/agregar_detalle.py  # detalle por empresa -> site/data_detalle.json (filtros)
 python -m http.server 8100 --directory site
 ```
 
+## Dashboard web
+
+- **Banner** con los scores de riesgo de fondo.
+- **Filtros**: sector, nivel de riesgo (Alto/Medio/Bajo).
+- **Tabs**: Ranking de riesgo (barras por score) · Liquidez vs Endeudamiento
+  (scatter, color = score) · Por sector (riesgo promedio).
+- **KPIs dinámicos** + recomendaciones que cambian según los filtros.
+
 ## Datos
 
+Hay **dos versiones**:
+- `data/estados_financieros.csv` — limpio (dashboard web y notebook).
+- `data/estados_financieros_raw.csv` — sucio a propósito (separador de miles,
+  mayúsculas inconsistentes, nulos, duplicados) para practicar **ETL en Power
+  Query** con `powerbi/ETL_POWERQUERY.md`.
+
 Sintéticos, con perfiles de salud financiera variados (sanas, medias, en riesgo).
-No representan a ninguna empresa real. Cuando quieras, se pueden reemplazar por
-datos públicos (ej: estados financieros de la CMF Chile) manteniendo el esquema.
+No representan a ninguna empresa real. Se pueden reemplazar por datos públicos
+(ej: estados financieros de la CMF Chile) manteniendo el esquema.
+
+## Power BI
+
+1. Cargar `data/estados_financieros_raw.csv` y limpiarlo (`powerbi/ETL_POWERQUERY.md`).
+2. Para el ranking usar `powerbi/ratios_riesgo.csv` (score ya calculado).
+3. Medidas DAX en `powerbi/README.md`; guardar como `powerbi/finanzas.pbip` (+ capturas).
 
 ## Estructura
 
 ```
 finanzas-riesgo/
-├── data/          # estados_financieros.csv (generado)
-├── analysis/      # generar_datos.py, agregar.py, consultas.sql
-├── powerbi/       # .pbix + capturas (en tu PC)
-└── site/          # dashboard web (index.html + data.json)
+├── data/          # estados_financieros.csv (limpio) + _raw.csv (sucio, ETL)
+├── analysis/      # generar_datos.py, agregar.py, agregar_detalle.py, consultas.sql
+├── powerbi/       # ETL_POWERQUERY.md, README.md (DAX), MODELO.md, ratios_riesgo.csv
+├── site/          # dashboard web: index.html + data.json + data_detalle.json + banner.png
+└── analisis_riesgo.ipynb
 ```
