@@ -4,191 +4,189 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Riesgo Financiero de Empresas | Dashboard BI</title>
-  <meta name="description" content="Análisis de ratios financieros y score de riesgo: qué empresas muestran señales de alerta." />
+  <meta name="description" content="Dashboard interactivo de riesgo financiero con filtros por sector y nivel de riesgo." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     html { scroll-behavior: smooth; }
-    .chart-box { position: relative; height: 340px; width: 100%; }
-    :focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+    .chart-box { position: relative; height: 360px; width: 100%; }
+    :focus-visible { outline: 3px solid #a78bfa; outline-offset: 2px; }
+    .tab-activo { background:#8b5cf6; color:#faf5ff; }
+    .banner { width:100%; height:auto; display:block; border-radius:1rem; }
+    select { color-scheme: dark; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased">
+<body class="bg-slate-800 text-slate-100 antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-violet-600">Saltar al contenido</a>
 
-  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-sky-600">Saltar al contenido</a>
+  <main id="contenido" class="max-w-6xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+    <img src="banner.png" alt="Riesgo financiero de empresas" class="banner" />
+    <p class="text-slate-300 text-sm">
+      Ratios financieros + score de riesgo compuesto. Autor:
+      <a href="https://github.com/pablomzzz" class="text-violet-400 underline">pablomzzz</a>.
+    </p>
 
-  <header class="border-b border-slate-800 bg-slate-900/60">
-    <div class="max-w-6xl mx-auto px-6 py-8">
-      <p class="text-indigo-400 font-semibold tracking-wide uppercase text-sm">
-        Proyecto BI · Análisis financiero
-      </p>
-      <h1 class="text-3xl md:text-4xl font-bold mt-2">
-        ¿Qué empresas muestran señales de riesgo?
-      </h1>
-      <p class="text-slate-400 mt-3 max-w-3xl">
-        Ratios financieros (liquidez, endeudamiento, margen) combinados en un
-        score de riesgo para priorizar revisión de cartera o crédito. Autor:
-        <a href="https://github.com/pablomzzz" class="text-indigo-400 underline">pablomzzz</a>.
-      </p>
+    <!-- FILTROS -->
+    <section aria-labelledby="ft" class="rounded-xl border border-slate-600 bg-slate-700/40 p-4">
+      <h2 id="ft" class="text-sm font-semibold text-slate-300 uppercase tracking-wide mb-3">Filtros</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 items-end">
+        <div>
+          <label for="fSector" class="block text-xs text-slate-300 mb-1">Sector</label>
+          <select id="fSector" class="w-full rounded-lg bg-slate-600 border border-slate-500 px-3 py-2 text-sm"><option value="">Todos</option></select>
+        </div>
+        <div>
+          <label for="fNivel" class="block text-xs text-slate-300 mb-1">Nivel de riesgo</label>
+          <select id="fNivel" class="w-full rounded-lg bg-slate-600 border border-slate-500 px-3 py-2 text-sm"><option value="">Todos</option></select>
+        </div>
+        <div class="flex gap-3">
+          <button id="btnLimpiar" class="rounded-lg border border-slate-500 px-4 py-2 text-sm font-semibold hover:bg-slate-600">Limpiar filtros</button>
+        </div>
+      </div>
+      <span id="resumenFiltro" class="text-sm text-slate-400 mt-3 inline-block"></span>
+    </section>
+
+    <section aria-label="Indicadores" class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="kpis" role="list"></section>
+
+    <div role="tablist" class="flex flex-wrap gap-2 border-b border-slate-600 pb-2">
+      <button role="tab" data-tab="ranking" class="tab tab-activo rounded-lg px-4 py-2 text-sm font-semibold">Ranking de riesgo</button>
+      <button role="tab" data-tab="scatter" class="tab rounded-lg px-4 py-2 text-sm font-semibold hover:bg-slate-600">Liquidez vs Endeudamiento</button>
+      <button role="tab" data-tab="sector" class="tab rounded-lg px-4 py-2 text-sm font-semibold hover:bg-slate-600">Por sector</button>
     </div>
-  </header>
 
-  <main id="contenido" class="max-w-6xl mx-auto px-6 py-10 space-y-12">
-
-    <section aria-labelledby="resumen-top">
-      <h2 id="resumen-top" class="text-xl font-semibold mb-4">Resumen ejecutivo</h2>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="kpis" role="list"></div>
-      <div class="mt-4 rounded-lg border border-rose-500/40 bg-rose-500/10 p-4 text-rose-200">
-        <strong>Hallazgo clave:</strong> <span id="insight-top">Cargando...</span>
+    <section data-panel="ranking">
+      <div class="rounded-xl border border-slate-600 bg-slate-700/40 p-4">
+        <h3 class="text-lg font-semibold mb-3">Score de riesgo por empresa (0-100)</h3>
+        <div class="chart-box" style="height:440px"><canvas id="chartScore"></canvas></div>
       </div>
     </section>
 
-    <section aria-labelledby="g1">
-      <h2 id="g1" class="text-lg font-semibold mb-3">Ranking de riesgo por empresa (score 0-100)</h2>
-      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-        <div class="chart-box" style="height:420px"><canvas id="chartScore" aria-label="Ranking de riesgo"></canvas></div>
+    <section data-panel="scatter" class="hidden">
+      <div class="rounded-xl border border-slate-600 bg-slate-700/40 p-4">
+        <h3 class="text-lg font-semibold mb-3">Liquidez vs Endeudamiento</h3>
+        <p class="text-sm text-slate-400 mb-3">Abajo-derecha (baja liquidez, alto endeudamiento) = zona de riesgo. Color = score.</p>
+        <div class="chart-box"><canvas id="chartScatter"></canvas></div>
       </div>
     </section>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <section aria-labelledby="g2">
-        <h2 id="g2" class="text-lg font-semibold mb-3">Liquidez vs Endeudamiento</h2>
-        <p class="text-sm text-slate-500 mb-3">Abajo-derecha (baja liquidez, alto endeudamiento) = zona de riesgo.</p>
-        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-          <div class="chart-box"><canvas id="chartScatter" aria-label="Liquidez vs endeudamiento"></canvas></div>
-        </div>
-      </section>
-      <section aria-labelledby="g3">
-        <h2 id="g3" class="text-lg font-semibold mb-3">Riesgo promedio por sector</h2>
-        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
-          <div class="chart-box"><canvas id="chartSector" aria-label="Riesgo por sector"></canvas></div>
-        </div>
-      </section>
-    </div>
+    <section data-panel="sector" class="hidden">
+      <div class="rounded-xl border border-slate-600 bg-slate-700/40 p-4">
+        <h3 class="text-lg font-semibold mb-3">Riesgo promedio por sector</h3>
+        <div class="chart-box"><canvas id="chartSector"></canvas></div>
+      </div>
+    </section>
 
-    <section aria-labelledby="resumen-bot" class="rounded-xl border border-slate-800 bg-slate-900/50 p-6">
-      <h2 id="resumen-bot" class="text-xl font-semibold mb-4">Recomendaciones</h2>
+    <section id="reco" class="rounded-xl border border-slate-600 bg-slate-700/40 p-6">
+      <h2 class="text-xl font-semibold mb-4">Recomendaciones</h2>
       <ul class="space-y-3 text-slate-300 list-disc list-inside" id="recomendaciones"></ul>
     </section>
 
-    <footer class="border-t border-slate-800 pt-6 text-sm text-slate-500">
-      <p><strong>Datos sintéticos:</strong> generados con
-      <code>analysis/generar_datos.py</code>. No representan a ninguna empresa real.</p>
+    <footer class="border-t border-slate-600 pt-6 text-sm text-slate-400">
+      <p><strong>Datos sintéticos.</strong> No representan a ninguna empresa real.</p>
     </footer>
   </main>
 
   <script>
     const PCT = (n) => (n * 100).toFixed(1) + "%";
-    Chart.defaults.color = "#cbd5e1";
-    Chart.defaults.borderColor = "#1e293b";
+    Chart.defaults.color = "#e2e8f0";
+    Chart.defaults.borderColor = "#475569";
     const color = (s) => s >= 65 ? "#f43f5e" : s >= 50 ? "#f59e0b" : "#10b981";
 
+    let DATA = null;
+    const charts = {};
+
     async function main() {
-      const d = await fetch("data.json").then((r) => r.json());
-      renderKPIs(d.kpis);
-      const peor = d.ranking_riesgo[0];
-      document.getElementById("insight-top").textContent =
-        `${peor.empresa} (${peor.sector}) es la más riesgosa: score ${peor.score_riesgo}/100, ` +
-        `liquidez ${peor.liquidez} (bajo 1 = no cubre deudas de corto plazo), ` +
-        `endeudamiento ${PCT(peor.endeudamiento)} y margen ${PCT(peor.margen_neto)}.`;
-      renderScore(d.ranking_riesgo);
-      renderScatter(d.ranking_riesgo);
-      renderSector(d.por_sector);
-      renderRecomendaciones(d);
+      DATA = await fetch("data_detalle.json").then((r) => r.json());
+      poblarFiltros(); conectar(); actualizar();
     }
-
-    function card(label, value, tone = "indigo") {
-      return `<div role="listitem" class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+    function poblarFiltros() {
+      DATA.dims.sectores.forEach((s) => document.getElementById("fSector").add(new Option(s, s)));
+      DATA.dims.niveles.forEach((n) => document.getElementById("fNivel").add(new Option(n, n)));
+    }
+    function conectar() {
+      ["fSector","fNivel"].forEach((id) => document.getElementById(id).addEventListener("change", actualizar));
+      document.getElementById("btnLimpiar").addEventListener("click", () => {
+        document.getElementById("fSector").value = ""; document.getElementById("fNivel").value = ""; actualizar();
+      });
+      document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => cambiarTab(b.dataset.tab)));
+    }
+    function cambiarTab(tab) {
+      document.querySelectorAll(".tab").forEach((b) => b.classList.toggle("tab-activo", b.dataset.tab === tab));
+      document.querySelectorAll("[data-panel]").forEach((p) => p.classList.toggle("hidden", p.dataset.panel !== tab));
+      requestAnimationFrame(() => Object.values(charts).forEach((c) => c.resize()));
+    }
+    function filtrar() {
+      const s = document.getElementById("fSector").value, n = document.getElementById("fNivel").value;
+      return DATA.registros.filter((r) => (!s || r.sector === s) && (!n || r.nivel === n));
+    }
+    function actualizar() {
+      const regs = filtrar();
+      renderKPIs(regs); renderScore(regs); renderScatter(regs); renderSector(regs); renderReco(regs);
+      document.getElementById("resumenFiltro").textContent = `${regs.length} empresas en la selección`;
+    }
+    function card(label, value, tone) {
+      return `<div role="listitem" class="rounded-xl border border-slate-600 bg-slate-700/40 p-4">
         <div class="text-2xl font-bold text-${tone}-400">${value}</div>
-        <div class="text-sm text-slate-400 mt-1">${label}</div></div>`;
+        <div class="text-sm text-slate-300 mt-1">${label}</div></div>`;
     }
-    function cardPeor(emp, score) {
-      return `<a href="#resumen-bot" role="listitem"
-          class="group block rounded-xl border border-rose-500/40 bg-rose-500/10 p-4 transition hover:bg-rose-500/20"
-          aria-label="Más riesgosa: ${emp}. Ir a recomendaciones.">
-        <div class="text-sm text-slate-400">Más riesgosa</div>
-        <div class="text-base font-bold text-rose-300 mt-1">${emp}</div>
-        <div class="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-rose-200 group-hover:underline">
-          score ${score} · ver plan ↓</div></a>`;
-    }
-    function renderKPIs(k) {
+    function renderKPIs(regs) {
+      const enRiesgo = regs.filter((r) => r.score_riesgo >= 50).length;
+      const ordenado = regs.slice().sort((a,b)=>b.score_riesgo-a.score_riesgo);
+      const peor = ordenado[0];
       document.getElementById("kpis").innerHTML =
-        card("Empresas analizadas", k.empresas) +
-        card("En riesgo (score≥50)", k.en_riesgo, "rose") +
-        card("% de la cartera", k.pct_riesgo + "%", "amber") +
-        cardPeor(k.mas_riesgosa, k.score_max);
+        card("Empresas", regs.length, "violet") +
+        card("En riesgo (score≥50)", enRiesgo, "rose") +
+        card("Score máximo", peor ? peor.score_riesgo : "—", "amber") +
+        (peor ? `<a href="#reco" role="listitem" class="group block rounded-xl border border-rose-500/40 bg-rose-500/10 p-4 hover:bg-rose-500/20 transition">
+          <div class="text-sm text-slate-300">Más riesgosa</div>
+          <div class="text-base font-bold text-rose-300 mt-1">${peor.empresa}</div>
+          <div class="mt-1 text-xs font-semibold text-rose-200 group-hover:underline">ver plan ↓</div></a>`
+          : card("Más riesgosa", "—", "slate"));
     }
+    function mkChart(id, cfg) { if (charts[id]) charts[id].destroy(); charts[id] = new Chart(document.getElementById(id), cfg); }
 
-    function renderScore(rows) {
-      new Chart(document.getElementById("chartScore"), {
+    function renderScore(regs) {
+      const rows = regs.slice().sort((a,b)=>a.score_riesgo-b.score_riesgo);
+      mkChart("chartScore", {
         type: "bar",
-        data: {
-          labels: rows.map((r) => r.empresa),
-          datasets: [{ label: "Score de riesgo", data: rows.map((r) => r.score_riesgo),
-            backgroundColor: rows.map((r) => color(r.score_riesgo)) }],
-        },
-        options: {
-          indexAxis: "y", responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: { x: { beginAtZero: true, max: 100 } },
-        },
+        data: { labels: rows.map((r)=>r.empresa), datasets: [{ label: "Score", data: rows.map((r)=>r.score_riesgo),
+          backgroundColor: rows.map((r)=>color(r.score_riesgo)) }] },
+        options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+          scales: { x: { beginAtZero: true, max: 100 } } },
       });
     }
-    function renderScatter(rows) {
-      new Chart(document.getElementById("chartScatter"), {
+    function renderScatter(regs) {
+      mkChart("chartScatter", {
         type: "scatter",
-        data: {
-          datasets: [{
-            label: "Empresas",
-            data: rows.map((r) => ({ x: r.endeudamiento, y: r.liquidez, emp: r.empresa })),
-            backgroundColor: rows.map((r) => color(r.score_riesgo)),
-            pointRadius: 6,
-          }],
-        },
-        options: {
-          responsive: true, maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: { callbacks: { label: (c) => `${c.raw.emp}: end ${PCT(c.raw.x)}, liq ${c.raw.y}` } },
-          },
-          scales: {
-            x: { title: { display: true, text: "Endeudamiento" }, ticks: { callback: PCT } },
-            y: { title: { display: true, text: "Liquidez" } },
-          },
-        },
+        data: { datasets: [{ label: "Empresas",
+          data: regs.map((r)=>({ x: r.endeudamiento, y: r.liquidez, emp: r.empresa })),
+          backgroundColor: regs.map((r)=>color(r.score_riesgo)), pointRadius: 7 }] },
+        options: { responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c)=>`${c.raw.emp}: end ${PCT(c.raw.x)}, liq ${c.raw.y}` } } },
+          scales: { x: { title: { display: true, text: "Endeudamiento" }, ticks: { callback: PCT } },
+            y: { title: { display: true, text: "Liquidez" } } } },
       });
     }
-    function renderSector(rows) {
-      new Chart(document.getElementById("chartSector"), {
+    function renderSector(regs) {
+      const g = {}; regs.forEach((r) => { (g[r.sector] ||= []).push(r.score_riesgo); });
+      const rows = Object.entries(g).map(([s,v])=>({ s, r: Math.round(v.reduce((a,b)=>a+b,0)/v.length) })).sort((a,b)=>b.r-a.r);
+      mkChart("chartSector", {
         type: "bar",
-        data: {
-          labels: rows.map((r) => r.sector),
-          datasets: [{ label: "Riesgo promedio", data: rows.map((r) => r.riesgo_prom),
-            backgroundColor: rows.map((r) => color(r.riesgo_prom)) }],
-        },
-        options: {
-          responsive: true, maintainAspectRatio: false,
-          plugins: { legend: { display: false } },
-          scales: { y: { beginAtZero: true, max: 100 } },
-        },
+        data: { labels: rows.map((r)=>r.s), datasets: [{ label: "Riesgo promedio", data: rows.map((r)=>r.r),
+          backgroundColor: rows.map((r)=>color(r.r)) }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true, max: 100 } } },
       });
     }
-    function renderRecomendaciones(d) {
-      const r = d.ranking_riesgo.filter((x) => x.score_riesgo >= 50);
+    function renderReco(regs) {
+      const r = regs.filter((x)=>x.score_riesgo>=50).sort((a,b)=>b.score_riesgo-a.score_riesgo);
       const items = [
-        r[0] ? `Revisar con prioridad <strong>${r[0].empresa}</strong> (score ${r[0].score_riesgo}): baja liquidez y alto endeudamiento la ponen en zona crítica.` : "Ninguna empresa supera el umbral de riesgo alto.",
-        r[1] ? `Monitorear <strong>${r[1].empresa}</strong> (score ${r[1].score_riesgo}): señales de alerta que conviene vigilar de cerca.` : "",
-        `El sector <strong>${d.por_sector[0].sector}</strong> concentra el mayor riesgo promedio (${d.por_sector[0].riesgo_prom}): ajustar exposición o condiciones de crédito.`,
-        "Complementar el score con flujo de caja y covenants antes de decisiones de crédito o inversión.",
+        r[0] ? `Revisar con prioridad <strong>${r[0].empresa}</strong> (score ${r[0].score_riesgo}): liquidez ${r[0].liquidez} y endeudamiento ${PCT(r[0].endeudamiento)}.` : "Ninguna empresa en riesgo alto en la selección.",
+        r[1] ? `Monitorear <strong>${r[1].empresa}</strong> (score ${r[1].score_riesgo}).` : "",
+        "Complementar el score con flujo de caja y covenants antes de decisiones de crédito.",
       ].filter(Boolean);
-      document.getElementById("recomendaciones").innerHTML = items.map((i) => `<li>${i}</li>`).join("");
+      document.getElementById("recomendaciones").innerHTML = items.map((i)=>`<li>${i}</li>`).join("");
     }
-
-    main().catch((e) => {
-      document.getElementById("insight-top").textContent =
-        "No se pudo cargar data.json. Sirve el sitio con un servidor local.";
-      console.error(e);
-    });
+    main().catch((e) => { console.error(e); alert("No se pudo cargar data_detalle.json (usa un servidor local)."); });
   </script>
 </body>
 </html>
